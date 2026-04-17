@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>KeyBank In-Branch — Lauren Pittock</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <script>
+    // Auth check — redirect to gate if not authenticated
+    if (sessionStorage.getItem("lp_auth") !== "true") {
+      window.location.href = "gate.html?case=keybank-inbranch";
+    }
+  </script>
+</head>
+<body class="case-body">
+
+  <nav>
+    <a href="index.html" class="nav-name">Lauren Pittock</a>
+    <div class="nav-links">
+      <a href="mailto:ldrakepittock@gmail.com">Contact</a>
+    </div>
+  </nav>
+
+  <div class="case-hero">
+    <a href="index.html" class="case-hero-back">← All work</a>
+
+    <div class="case-hero-meta">
+      <span class="case-tag">Service Design</span>
+      <span class="case-tag">Research</span>
+      <span class="case-industry">Banking · KeyBank</span>
+    </div>
+
+    <h1 class="case-hero-title">How might we improve in-branch experiences?</h1>
+
+    <p class="case-hero-summary">A bank wanted to fundamentally shift how bankers interact with clients. I led a 6-month end-to-end project — from service blueprinting and ethnographic research to piloting and rolling out a new conversational model across 900+ branches.</p>
+
+    <div class="case-hero-stats">
+      <div class="stat-item">
+        <span class="stat-value">+2.52</span>
+        <span class="stat-label">NPS increase</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">+10%</span>
+        <span class="stat-label">Scheduled appointments</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">900+</span>
+        <span class="stat-label">Branches impacted</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">14</span>
+        <span class="stat-label">Interviews conducted</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="case-content">
+
+    <!-- CONTEXT -->
+    <div class="case-section">
+      <div class="case-section-label">Context</div>
+      <h3>The opportunity</h3>
+      <p>KeyBank's retail branches were struggling with inconsistent client experiences. The quality of interactions between bankers and clients varied widely — and leadership knew that the relationship between banker and client was a key differentiator in a competitive market.</p>
+      <p>As Project Lead and Service Designer, I was asked to scope and deliver a solution within 6 months that could realistically be implemented across the full branch network.</p>
+      <div class="role-pill">Role: Project Lead · Service Designer</div>
+    </div>
+
+    <!-- PROCESS -->
+    <div class="case-section">
+      <div class="case-section-label">Process</div>
+      <h3>A full design cycle in six months</h3>
+
+      <div class="process-steps">
+        <div class="process-step">
+          <span class="step-num">01</span>
+          <span class="step-title">Scope & Current State</span>
+          <span class="step-desc">Service blueprints + stakeholder workshop to map current state and surface opportunity areas</span>
+        </div>
+        <div class="process-step">
+          <span class="step-num">02</span>
+          <span class="step-title">Research</span>
+          <span class="step-desc">14 interviews with top-performing bankers across role, location, and tenure</span>
+        </div>
+        <div class="process-step">
+          <span class="step-num">03</span>
+          <span class="step-title">Synthesis</span>
+          <span class="step-desc">Narrative analysis revealed 5 core mindsets shared by the most successful teammates</span>
+        </div>
+        <div class="process-step">
+          <span class="step-num">04</span>
+          <span class="step-title">Ideation</span>
+          <span class="step-desc">20+ versions of a conversational model, workshopped down to 3 candidates with stakeholders</span>
+        </div>
+        <div class="process-step">
+          <span class="step-num">05</span>
+          <span class="step-title">Pilot & Iterate</span>
+          <span class="step-desc">Tested in a Dayton, OH pilot branch, measuring efficacy before network rollout</span>
+        </div>
+        <div class="process-step">
+          <span class="step-num">06</span>
+          <span class="step-title">Implement</span>
+          <span class="step-desc">Launched across 900+ branches with full training curriculum</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH -->
+    <div class="case-section">
+      <div class="case-section-label">Research</div>
+      <h3>Learning from the people already doing it well</h3>
+      <p>Rather than designing from scratch, I recruited and led 14 in-depth interviews with bankers who were already known for creating exceptional client experiences — selected across roles, geographies, and tenure levels.</p>
+      <p>Using narrative analysis, I surfaced 5 core mindsets that separated high performers from average ones.</p>
+
+      <div class="insight-block">
+        <p>The most successful bankers think about <em>helping</em> clients rather than <em>selling</em> to clients. They rely on their team's expertise — not just their own. And they think about the interaction in and out of the branch, not just within it.</p>
+      </div>
+
+      <div class="img-placeholder">
+        <div class="img-placeholder-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <span class="img-placeholder-text">Add your research artifacts here — interview quotes, mindset framework, etc.</span>
+      </div>
+    </div>
+
+    <!-- DESIGN -->
+    <div class="case-section">
+      <div class="case-section-label">Design</div>
+      <h3>The Relationship Experience Model</h3>
+      <p>I ideated over 20 versions of a conversational model, workshopped 3 candidates with cross-functional stakeholders (Sales Enablement, L&D, Corporate Communications), and refined the final model into a teachable framework.</p>
+      <p>The final model — built around the mnemonic CARE: Clarify → Connect → Carry Out → Conclude & Continue — gave bankers a shared language and a concrete structure for every client interaction.</p>
+
+      <div class="img-placeholder">
+        <div class="img-placeholder-icon">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+        </div>
+        <span class="img-placeholder-text">Add your Relationship Experience Model visual here</span>
+      </div>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="case-section">
+      <div class="case-section-label">Outcomes</div>
+      <h3>Measurable impact within 2 months of pilot</h3>
+      <p>After piloting in Dayton, OH and iterating on the training materials, the model was rolled out network-wide. Results from the pilot market showed clear improvement across all tracked metrics.</p>
+
+      <div class="outcome-grid">
+        <div class="outcome-card">
+          <div class="stat-value">84→87</div>
+          <div class="stat-label">NPS — from rank 13 to rank 2 in market</div>
+        </div>
+        <div class="outcome-card">
+          <div class="stat-value">+10%</div>
+          <div class="stat-label">Scheduled appointments in 2 months</div>
+        </div>
+        <div class="outcome-card">
+          <div class="stat-value">+15%</div>
+          <div class="stat-label">Financial Wellness Review usage</div>
+        </div>
+        <div class="outcome-card">
+          <div class="stat-value">+4%</div>
+          <div class="stat-label">Product Solutions Acted On (PSAO)</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- REFLECTION -->
+    <div class="case-section">
+      <div class="case-section-label">Reflection</div>
+      <h3>What I'd do differently</h3>
+      <p>The pilot approach was invaluable — it gave us real-world validation before committing to a network-wide rollout. If I were to run this project again, I'd build in a more structured feedback loop from frontline bankers during the pilot phase, rather than primarily measuring outcomes. Bankers had nuanced feedback about edge cases that we discovered too late to fully incorporate into the initial training materials.</p>
+      <p>I'd also push for a longer pilot window — 2 months was enough to see early signals, but behavioral change in service delivery is gradual. A 4-month pilot would have given us more confidence in sustainability.</p>
+    </div>
+
+  </div>
+
+  <!-- NEXT CASE -->
+  <div class="case-nav">
+    <div>
+      <div class="case-nav-label">Next case study</div>
+      <a href="gate.html?case=united-smb">
+        <div class="case-nav-title">How might we win with small businesses? →</div>
+      </a>
+    </div>
+    <a href="index.html" style="font-size:0.82rem; color: var(--ink-muted); letter-spacing:0.05em;">← Back to all work</a>
+  </div>
+
+  <footer>
+    <div class="footer-left">
+      <span>Lauren Pittock</span>
+      <span class="dot">·</span>
+      <span>San Francisco, CA</span>
+    </div>
+    <div class="footer-right">
+      <a href="mailto:ldrakepittock@gmail.com">ldrakepittock@gmail.com</a>
+    </div>
+  </footer>
+
+</body>
+</html>
