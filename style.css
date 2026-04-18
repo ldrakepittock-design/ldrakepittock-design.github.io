@@ -860,16 +860,18 @@ footer a:hover {
 
 .hero-photo-wrap {
   flex-shrink: 0;
+  width: 220px;
 }
 
 .hero-photo {
-  width: 240px;
-  height: 240px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 15%;
   border: 3px solid var(--teal-light);
   display: block;
+  flex-shrink: 0;
 }
 
 @media (max-width: 768px) {
