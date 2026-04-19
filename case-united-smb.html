@@ -3,22 +3,234 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>United Airlines SMB — Lauren Pittock</title>
+  <title>KeyBank In-Branch — Lauren Pittock</title>
   <link rel="stylesheet" href="style.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
   <script>
     if (sessionStorage.getItem("lp_auth") !== "true") {
-      window.location.href = "gate.html?case=united-smb";
+      window.location.href = "gate.html?case=keybank-inbranch";
     }
   </script>
+  <style>
+    .case-hero { border-bottom: none; }
+
+    .case-body-text {
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.25rem;
+    }
+    .case-body-text:last-child { margin-bottom: 0; }
+
+    /* Bulleted list in body */
+    .case-body-list {
+      max-width: 680px;
+      margin: 0 0 1.25rem 0;
+      padding-left: 1.4rem;
+      color: var(--ink-light);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .case-body-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Context: tools image beside text */
+    .context-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+    .context-img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+    .context-img-caption {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    /* Full-width workshop photo */
+    .case-img-full {
+      display: block;
+      width: 100%;
+      margin: 2.5rem 0 0.75rem;
+      border-radius: var(--radius);
+      object-fit: cover;
+      max-height: 480px;
+    }
+
+
+    .case-img-caption-editorial {
+      text-align: left;
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Caption wrapper aligned to inset image width */
+    .case-img-inset-wrap {
+      width: 42%;
+      margin: 2.5rem auto 2.5rem;
+    }
+    .case-img-inset-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+    }
+    .case-img-inset-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    /* Caption wrapper aligned to training image width */
+    .case-img-training-wrap {
+      width: 55%;
+      margin: 2rem auto 2.5rem;
+    }
+    .case-img-training-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      opacity: 0.92;
+    }
+    .case-img-training-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    /* Process: text left, quote box right */
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .process-layout { grid-template-columns: 1fr; }
+      .case-img-inset-wrap,
+      .case-img-training-wrap { width: 100%; }
+    }
+
+    /* Large display pull quote */
+    .pull-quote {
+      margin: 3.5rem 0;
+    }
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+      max-width: 800px;
+      margin-bottom: 1rem;
+    }
+    .pull-quote-attr {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* Inline quote box (white card style) */
+    .quote-box {
+      background: var(--white);
+      border: 1px solid var(--warm-line);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem 2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 2rem 0;
+      max-width: 680px;
+    }
+    .quote-box p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.6;
+      margin: 0 0 0.6rem;
+    }
+    .quote-box-attr {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* Meta table */
+    .case-meta-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--warm-line);
+      border-bottom: 1px solid var(--warm-line);
+      margin-bottom: 4.5rem;
+    }
+    .case-meta-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .case-meta-value {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    /* Mindsets table */
+    .mindsets-table {
+      width: 100%;
+      max-width: 680px;
+      border-collapse: collapse;
+      margin: 2rem 0 2.5rem;
+    }
+    .mindsets-table th {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      padding: 0 1.5rem 0.75rem 0;
+      text-align: left;
+      border-bottom: 1px solid var(--warm-line);
+    }
+    .mindsets-table td {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+      padding: 0.75rem 1.5rem 0.75rem 0;
+      border-bottom: 1px solid var(--warm-line);
+      vertical-align: top;
+    }
+    .mindsets-table td em {
+      color: var(--ink);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .case-meta-table { grid-template-columns: 1fr; }
+      .context-layout { grid-template-columns: 1fr; }
+      .case-img-inset,
+      .case-img-training { width: 100%; }
+    }
+  </style>
 </head>
 <body class="case-body">
 
   <nav>
     <a href="index.html" class="nav-name">Lauren Pittock</a>
     <div class="nav-links">
+      <a href="about.html">About</a>
     </div>
   </nav>
 
@@ -26,77 +238,72 @@
     <a href="index.html" class="case-hero-back">← All work</a>
 
     <div class="case-hero-meta">
-      <span class="case-tag">B2B Research</span>
-      <span class="case-tag">Concept Design</span>
-      <span class="case-industry">Aviation · United Airlines</span>
+      <span class="case-tag">Service Design</span>
+      <span class="case-tag">Research</span>
+      <span class="case-industry">Retail Banking</span>
     </div>
 
-    <h1 class="case-hero-title">How might we win with small businesses?</h1>
+    <h1 class="case-hero-title">How might we improve in-branch experiences?</h1>
 
-    <p class="case-hero-summary">United Airlines wanted to better engage small business customers — a largely underserved segment. Through deep ethnographic research with 20 CEOs and CFOs, I uncovered a core insight that reframed how the airline should think about this audience, leading to a new loyalty program concept.</p>
+    <p class="case-hero-summary">A major retail bank wanted to fundamentally shift how bankers interact with clients. I led a 4-month end-to-end project, from ethnographic research and service blueprinting to piloting and rolling out a new conversational model across 900+ branches.</p>
 
     <div class="case-hero-stats">
       <div class="stat-item">
-        <span class="stat-value">$337M</span>
-        <span class="stat-label">Projected revenue over 5 years</span>
+        <span class="stat-value">+2.52</span>
+        <span class="stat-label">NPS increase</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">4,000</span>
-        <span class="stat-label">New SMB partnerships projected</span>
+        <span class="stat-value">+10%</span>
+        <span class="stat-label">Scheduled appointments</span>
       </div>
       <div class="stat-item">
-        <span class="stat-value">20</span>
-        <span class="stat-label">CEOs & CFOs interviewed</span>
+        <span class="stat-value">900+</span>
+        <span class="stat-label">Branches impacted</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-value">14</span>
+        <span class="stat-label">Interviews conducted</span>
       </div>
     </div>
   </div>
 
   <div class="case-content">
 
+    <!-- META ROW -->
+    <div class="case-meta-table">
+      <div>
+        <div class="case-meta-label">Role</div>
+        <div class="case-meta-value">Project Lead · Service Designer</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Industry</div>
+        <div class="case-meta-value">Retail Banking</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Methods</div>
+        <div class="case-meta-value">Service blueprinting · Stakeholder interviews · Ethnographic interviews · Narrative analysis · Co-design facilitation · Pilot design · L&D curriculum development</div>
+      </div>
+    </div>
+
     <!-- CONTEXT -->
     <div class="case-section">
       <div class="case-section-label">Context</div>
-      <h3>A largely ignored segment with enormous potential</h3>
-      <p>Small businesses represent a significant portion of business travel, yet most airline loyalty programs were designed for either individual frequent flyers or large corporations. United wanted to understand whether a dedicated small business offering could unlock this underserved market.</p>
-      <p>As Project Lead, I scoped and ran the full research process — from secondary market sizing to ethnographic fieldwork to a concept prototype with financial modeling.</p>
-      <div class="role-pill">Role: Project Lead</div>
-    </div>
+      <h3>When every banker is on their own</h3>
 
-    <!-- PROCESS -->
-    <div class="case-section">
-      <div class="case-section-label">Process</div>
-      <h3>Research-first, prototype to validate</h3>
-
-      <div class="process-steps">
-        <div class="process-step">
-          <span class="step-num">01</span>
-          <span class="step-title">Secondary Research</span>
-          <span class="step-desc">Market sizing to identify the size of prize in the SMB segment</span>
+      <div class="context-layout">
+        <div>
+          <p class="case-body-text">A major retail bank was grappling with inconsistent client experiences across its branch network. Leadership understood that the banker-client relationship was a primary differentiator in a competitive market, but the quality of those interactions varied significantly from branch to branch and banker to banker.</p>
+          <p class="case-body-text">The root of the problem was not motivation or talent. Bankers had no shared language, no common model, and a fragmented toolkit to draw from. Each person was navigating client interactions on their own. The result:</p>
+          <ul class="case-body-list">
+            <li>Inconsistent client experiences with no standard for what "great" looked like</li>
+            <li>Training materials that were disconnected and difficult to apply in the moment</li>
+            <li>Leadership without a common framework to coach to</li>
+          </ul>
+          <p class="case-body-text">As Project Lead and Service Designer, I was asked to scope and deliver a solution within 4 months that could scale across the full branch network.</p>
         </div>
-        <div class="process-step">
-          <span class="step-num">02</span>
-          <span class="step-title">Recruitment</span>
-          <span class="step-desc">Recruited CEOs and CFOs from 10 diverse small businesses</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">03</span>
-          <span class="step-title">Field Research</span>
-          <span class="step-desc">3-hour in-context ethnographic interviews at each business's office</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">04</span>
-          <span class="step-title">Insights Session</span>
-          <span class="step-desc">1-day video-based session immersing stakeholders from IT, Sales, Product & Marketing</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">05</span>
-          <span class="step-title">Ideation</span>
-          <span class="step-desc">Evaluated solutions across desirability, viability, and feasibility</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">06</span>
-          <span class="step-title">Prototype</span>
-          <span class="step-desc">Concept deliverable: P&L, member journey, product roadmap, growth trajectory</span>
+        <div>
+          <img src="kb-tools.png" alt="Fragmented tools bankers were navigating" class="context-img" />
+          <p class="context-img-caption">The fragmented toolkit bankers were navigating, a key driver of inconsistency.</p>
         </div>
       </div>
     </div>
@@ -104,74 +311,122 @@
     <!-- RESEARCH -->
     <div class="case-section">
       <div class="case-section-label">Research</div>
-      <h3>The practices insight: how SMBs are different</h3>
-      <p>The 3-hour in-office ethnographic interviews revealed something fundamental that changed how we framed the entire opportunity. Small businesses don't operate like large corporations (governed by explicit policies), nor like individuals (governed by personal preferences).</p>
+      <h3>Learning from the people already doing it well</h3>
 
-      <div class="insight-block">
-        <p>Small businesses abide by <em>"practices"</em> — implicit customs grown by culture, flexible but ambiguous. Where a corporate traveler says "I have to," an SMB owner says "I should." This distinction has profound implications for how to design a loyalty program for them.</p>
-      </div>
+      <p class="case-body-text">The research question was deliberately reframed: rather than asking what bankers should do differently, I went looking for what the best bankers were already doing that others were not. I recruited and led 14 in-depth interviews with bankers nominated for creating exceptional client experiences, selected across a range of roles, geographies, and tenure levels:</p>
 
-      <p>This reframe meant that a successful program had to work with the informal, peer-influenced nature of SMB decision-making — not against it. Peer referrals, trust networks, and community belonging would matter far more than a standard points system.</p>
+      <ul class="case-body-list">
+        <li>6 Personal Bankers, 2 Private Client Bankers, 2 Tellers, 4 Branch Managers</li>
+        <li>Spanning 6 states: IN, OH, ME, PA, VT, WA</li>
+        <li>Tenure from 9 months to 24 years</li>
+      </ul>
 
-      <div class="img-placeholder">
-        <div class="img-placeholder-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <p class="case-body-text">Through narrative analysis, I identified 5 core mindsets that consistently separated high performers from their peers. These were not behaviors to prescribe, but ways of thinking that shaped every aspect of how great bankers showed up with clients.</p>
+
+      <table class="mindsets-table">
+        <thead>
+          <tr>
+            <th>Successful teammates think about…</th>
+            <th>Rather than…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><em>Helping</em> their clients</td>
+            <td>Selling to clients</td>
+          </tr>
+          <tr>
+            <td>Relying on their <em>team's expertise</em></td>
+            <td>Relying on just their own expertise</td>
+          </tr>
+          <tr>
+            <td>The interaction <em>in and out of the branch</em></td>
+            <td>The interaction just in the branch</td>
+          </tr>
+          <tr>
+            <td>Creating <em>unique</em> experiences</td>
+            <td>Following just expected norms</td>
+          </tr>
+          <tr>
+            <td>Discovering <em>needs</em></td>
+            <td>Fulfilling wants</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+
+    <!-- PROCESS -->
+    <div class="case-section">
+      <div class="case-section-label">Process</div>
+      <h3>From insight to model</h3>
+      <div class="process-layout">
+        <div>
+          <p class="case-body-text">The project involved two major cross-functional workshops. The first brought together stakeholders from Sales Enablement, L&D, Corporate Communications, and Marketing to map the current state through service blueprinting, building a shared picture of what was and was not working before anyone started designing solutions.</p>
+          <p class="case-body-text">With alignment on the problem, the 5 mindsets from the research became the foundation for design. The second workshop focused on ideation and convergence: I facilitated the group through 20+ versions of a conversational model, pressure-tested 3 candidates, and refined the final version into a framework any banker could internalize and apply.</p>
         </div>
-        <span class="img-placeholder-text">Add your Policies / Practices / Preferences framework visual here</span>
+        <div class="quote-box" style="margin: 0;">
+          <p>"Lauren did an amazing job. She demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and her ability to build rapport quickly with our partners and leaders."</p>
+          <span class="quote-box-attr">— Victor Aranda, SVP Employee Experience</span>
+        </div>
       </div>
     </div>
 
-    <!-- INSIGHTS SESSION -->
-    <div class="case-section">
-      <div class="case-section-label">Insights Session</div>
-      <h3>Bringing stakeholders into the field — without leaving the room</h3>
-      <p>One of the most powerful moments of this project was the 1-day video-based insights session. Rather than presenting findings in a deck, I curated video clips from the ethnographic interviews and structured the day so that stakeholders from IT, Sales, Product, and Marketing could experience the research themselves.</p>
-      <p>After watching participants talk about their travel habits, peer networks, and decision-making processes, stakeholders ideated solutions grounded in real customer context — not assumptions. The quality of ideas was markedly different than in sessions that don't use this approach.</p>
+    <!-- WORKSHOP PHOTO — full width -->
+    <img src="kb-facilitation.png" alt="Lauren facilitating a cross-functional workshop with KeyBank stakeholders" class="case-img-full" />
+    <p class="case-img-caption-editorial">Cross-functional stakeholders during one of two workshops.</p>
 
-      <div class="img-placeholder">
-        <div class="img-placeholder-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
-        <span class="img-placeholder-text">Add workshop photos or session artifacts here</span>
+    <!-- DESIGN -->
+    <div class="case-section">
+      <div class="case-section-label">Design</div>
+      <h3>The Relationship Experience Model</h3>
+      <p class="case-body-text">The final model is built around 5 C's: <strong>Care, Connect, Clarify, Carry Out,</strong> and <strong>Conclude and Continue.</strong> Care sits at the center as the overarching mindset, the stance of empathy and rapport-building that frames every other step in the interaction. The remaining four provide structure for the conversation itself.</p>
+      <p class="case-body-text">The model was not designed to be a script. It was designed to be internalized, making explicit what the best bankers were already doing intuitively, in a form that could be taught, practiced, and coached to consistently.</p>
+
+      <div class="case-img-inset-wrap">
+        <img src="kb-model.png" alt="The Relationship Experience Model, 5 C's" />
+        <p class="case-img-caption-editorial">The final Relationship Experience Model.</p>
+      </div>
+
+      <p class="case-body-text">To support the network-wide rollout, I partnered with Learning and Development to design a full training curriculum: facilitator guides, role-play scenarios, skill practice modules, and leadership coaching tools. The program was built to be delivered by branch leaders without dependence on a central team, which was essential for scaling across 900+ locations in a 4-month window.</p>
+
+      <div class="case-img-training-wrap">
+        <img src="kb-training.png" alt="Overview of the Relationship Experience Model training curriculum" />
+        <p class="case-img-caption-editorial">Training curriculum delivered across 900+ branches.</p>
       </div>
     </div>
 
-    <!-- CONCEPT -->
+    <!-- OUTCOMES -->
     <div class="case-section">
-      <div class="case-section-label">Concept</div>
-      <h3>An invite-only program built on peer trust</h3>
-      <p>The final concept was an invite-only small business loyalty program where individual travelers could choose travel benefits tailored to their business needs — not a one-size-fits-all corporate account.</p>
-      <p>Key design principles drawn from the research: members refer peers (not the airline), packages flex around business type, and benefits go beyond flights to reduce business friction. The concept deliverable included a member journey, product roadmap, initial P&L, and 5-year growth trajectory.</p>
-
-      <div class="img-placeholder">
-        <div class="img-placeholder-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
-        <span class="img-placeholder-text">Add your Member Journey or Product Roadmap visual here</span>
-      </div>
+      <div class="case-section-label">Outcomes</div>
+      <h3>Measurable impact within 2 months of pilot</h3>
+      <p class="case-body-text">Before the network-wide rollout, the model was piloted in a single market to validate the training approach and measure efficacy. Piloting first was a deliberate design decision: it created space to iterate on the curriculum with real data before committing to full-scale implementation. Results from the pilot market were strong across every tracked metric.</p>
 
       <div class="outcome-grid">
         <div class="outcome-card">
-          <div class="stat-value">$337M</div>
-          <div class="stat-label">Projected revenue over 5 years</div>
+          <div class="stat-value">84 → 87</div>
+          <div class="stat-label">NPS, from rank 13 to rank 2 in market</div>
         </div>
         <div class="outcome-card">
-          <div class="stat-value">4K</div>
-          <div class="stat-label">New SMB partnerships by Year 5</div>
+          <div class="stat-value">+10%</div>
+          <div class="stat-label">Scheduled appointments in 2 months</div>
         </div>
         <div class="outcome-card">
-          <div class="stat-value">25K</div>
-          <div class="stat-label">National SMB members by Year 5</div>
+          <div class="stat-value">+15%</div>
+          <div class="stat-label">Financial Wellness Review usage</div>
+        </div>
+        <div class="outcome-card">
+          <div class="stat-value">+4%</div>
+          <div class="stat-label">Product Solutions Acted On (PSAO)</div>
         </div>
       </div>
     </div>
 
     <!-- REFLECTION -->
     <div class="case-section">
-      <div class="case-section-label">Reflection</div>
-      <h3>What I'd do differently</h3>
-      <p>The video-based insights session was the most impactful facilitation format I've used — but it requires significant prep time to select and edit the right clips. In future projects, I'd build this editing time into the project plan from the start, rather than treating it as an add-on after analysis is complete.</p>
-      <p>I'd also have pushed to test the concept with actual SMB owners before finalizing the P&L projections. The financial model was built on assumptions that would have benefited from even a lightweight validation round with potential program members.</p>
+      <div class="case-section-label">What I learned</div>
+      <h3>On the value of seeing the work in context</h3>
+      <p class="case-body-text">This project reinforced something I now build into every research plan: interview data and observational data answer different questions. Our interviews surfaced the mindsets and mental models of great bankers with real depth. What they could not give us was a window into the physical environment, the in-the-moment workarounds, and the edge cases that only emerge when you are watching someone do the actual work. In a future engagement of this scope, pairing ethnographic interviews with in-branch observation from the start would produce a richer and more complete picture of the problem.</p>
     </div>
 
   </div>
@@ -179,8 +434,8 @@
   <div class="case-nav">
     <div>
       <div class="case-nav-label">Next case study</div>
-      <a href="gate.html?case=intuit-onboarding">
-        <div class="case-nav-title">How might we transform the onboarding experience? →</div>
+      <a href="gate.html?case=united-smb">
+        <div class="case-nav-title">How might we win with small businesses? →</div>
       </a>
     </div>
     <a href="index.html" style="font-size:0.82rem; color: var(--ink-muted); letter-spacing:0.05em;">← Back to all work</a>
@@ -196,6 +451,13 @@
       <a href="mailto:ldrakepittock@gmail.com">ldrakepittock@gmail.com</a>
     </div>
   </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
 
 </body>
 </html>
