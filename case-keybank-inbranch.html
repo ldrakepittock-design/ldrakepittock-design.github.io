@@ -25,6 +25,41 @@
     }
     .case-body-text:last-child { margin-bottom: 0; }
 
+    /* Bulleted list in body */
+    .case-body-list {
+      max-width: 680px;
+      margin: 0 0 1.25rem 0;
+      padding-left: 1.4rem;
+      color: var(--ink-light);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .case-body-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    /* Context: tools image beside text */
+    .context-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+    .context-img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+    .context-img-caption {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
     /* Full-width workshop photo */
     .case-img-full {
       display: block;
@@ -35,12 +70,21 @@
       max-height: 480px;
     }
 
-    /* Inset model image */
-    .case-img-editorial {
+    /* Inset centered image */
+    .case-img-inset {
       display: block;
-      width: 60%;
+      width: 42%;
       margin: 2.5rem auto 0.75rem;
       border-radius: var(--radius);
+    }
+
+    /* Small training grid image */
+    .case-img-training {
+      display: block;
+      width: 55%;
+      margin: 2rem auto 0.75rem;
+      border-radius: var(--radius);
+      opacity: 0.92;
     }
 
     .case-img-caption-editorial {
@@ -66,6 +110,30 @@
     }
     .pull-quote-attr {
       font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* Inline quote box (white card style) */
+    .quote-box {
+      background: var(--white);
+      border: 1px solid var(--warm-line);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem 2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 2rem 0;
+      max-width: 680px;
+    }
+    .quote-box p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.6;
+      margin: 0 0 0.6rem;
+    }
+    .quote-box-attr {
+      font-size: 0.78rem;
       color: var(--ink-muted);
       font-style: italic;
     }
@@ -127,7 +195,9 @@
 
     @media (max-width: 768px) {
       .case-meta-table { grid-template-columns: 1fr; }
-      .case-img-editorial { width: 100%; }
+      .context-layout { grid-template-columns: 1fr; }
+      .case-img-inset,
+      .case-img-training { width: 100%; }
     }
   </style>
 </head>
@@ -194,22 +264,39 @@
     <!-- CONTEXT -->
     <div class="case-section">
       <div class="case-section-label">Context</div>
-      <h3>The opportunity</h3>
-      <p class="case-body-text">KeyBank's retail branches were struggling with inconsistent client experiences. The quality of interactions between bankers and clients varied widely — and leadership knew that the banker-client relationship was a key differentiator in a competitive market.</p>
-      <p class="case-body-text">The challenge wasn't technology or products. It was the conversation itself. As Project Lead and Service Designer, I was asked to scope and deliver a solution within 4 months that could realistically be implemented across the full branch network.</p>
-      <p class="case-body-text">I started by mapping the current state through service blueprinting and a cross-functional stakeholder workshop — bringing together teams from Sales Enablement, L&D, Corporate Communications, and Marketing to build a shared picture of the problem before anyone started designing solutions.</p>
+      <h3>When every banker is on their own</h3>
+
+      <div class="context-layout">
+        <div>
+          <p class="case-body-text">KeyBank's retail branches were struggling with inconsistent client experiences. The quality of interactions between bankers and clients varied widely — and leadership knew that the banker-client relationship was a key differentiator in a competitive market.</p>
+          <p class="case-body-text">The root of the problem wasn't motivation or talent. It was that bankers had no shared language, no common model, and a fragmented toolkit to work from. Each person was improvising on their own. The result:</p>
+          <ul class="case-body-list">
+            <li>Wildly inconsistent client experiences across branches</li>
+            <li>No shared definition of what "a great interaction" looked like</li>
+            <li>Training materials that were disconnected and hard to apply in the moment</li>
+            <li>Leadership unable to coach to a consistent standard</li>
+          </ul>
+          <p class="case-body-text">As Project Lead and Service Designer, I was asked to scope and deliver a solution within 4 months — one that could realistically be implemented across the full branch network.</p>
+        </div>
+        <div>
+          <img src="kb-tools.png" alt="Fragmented tools bankers were navigating" class="context-img" />
+          <p class="context-img-caption">The fragmented toolkit bankers were navigating — a key driver of inconsistency.</p>
+        </div>
+      </div>
     </div>
 
     <!-- RESEARCH -->
     <div class="case-section">
       <div class="case-section-label">Research</div>
       <h3>Learning from the people already doing it well</h3>
-      <p class="case-body-text">Rather than designing from scratch, I recruited and led 14 in-depth interviews with bankers already known for creating exceptional client experiences — selected across roles, geographies, and tenure levels, from 9-month tellers to 24-year private client bankers across 6 states.</p>
-      <p class="case-body-text">The research question wasn't "what should bankers do differently?" It was "what are the best bankers already doing that others aren't?" That reframe changed everything about what we found.</p>
 
-      <div class="insight-block">
-        <p>The most successful bankers don't think about <em>selling</em> — they think about <em>helping</em>. They rely on their team's expertise, not just their own. And they think about the client relationship in and out of the branch, not just within it.</p>
-      </div>
+      <p class="case-body-text">I recruited and led 14 in-depth interviews with bankers already known for creating exceptional client experiences — selected to represent a range of roles, geographies, and tenure:</p>
+
+      <ul class="case-body-list">
+        <li>6 Personal Bankers, 2 Private Client Bankers, 2 Tellers, 4 Branch Managers</li>
+        <li>Spanning 6 states: IN, OH, ME, PA, VT, WA</li>
+        <li>Tenure ranging from 9 months to 24 years</li>
+      </ul>
 
       <p class="case-body-text">Using narrative analysis, I distilled the interviews into 5 core mindsets that separated high performers from average ones — not behaviors to prescribe, but ways of thinking that produced consistently better interactions.</p>
 
@@ -249,17 +336,17 @@
     <div class="case-section">
       <div class="case-section-label">Process</div>
       <h3>From insight to model</h3>
-      <p class="case-body-text">The 5 mindsets became the foundation for design. In two major cross-functional workshops, I facilitated ideation with stakeholders across Sales Enablement, L&D, Corporate Communications, and Marketing — generating 20+ versions of a conversational model, pressure-testing 3 candidates with the group, and refining the final version into something a banker with any level of experience could internalize and apply.</p>
+      <p class="case-body-text">The 5 mindsets became the foundation for design. In two major cross-functional workshops, I facilitated ideation with stakeholders across Sales Enablement, L&D, Corporate Communications, and Marketing — generating 20+ versions of a conversational model, pressure-testing 3 candidates with the group, and refining the final version into something any banker could internalize and apply.</p>
     </div>
 
-    <!-- WORKSHOP PHOTO — full width, outside section -->
+    <!-- WORKSHOP PHOTO — full width -->
     <img src="kb-facilitation.png" alt="Lauren facilitating a cross-functional workshop with KeyBank stakeholders" class="case-img-full" />
     <p class="case-img-caption-editorial">Cross-functional stakeholders during one of two workshops.</p>
 
-    <!-- PULL QUOTE -->
-    <div class="pull-quote">
-      <p class="pull-quote-text">"Lauren did an amazing job — she demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and ability to lead the work and lead workshops."</p>
-      <p class="pull-quote-attr">— Victor Aranda, SVP Employee Experience, KeyBank</p>
+    <!-- VICTOR QUOTE — white box style -->
+    <div class="quote-box">
+      <p>"Lauren did an amazing job — she demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and ability to lead the work and lead workshops."</p>
+      <span class="quote-box-attr">— Victor Aranda, SVP Employee Experience, KeyBank</span>
     </div>
 
     <!-- DESIGN -->
@@ -269,15 +356,20 @@
       <p class="case-body-text">The final model — built around 5 C's: <strong>Care, Connect, Clarify, Carry Out,</strong> and <strong>Conclude and Continue</strong> — gave bankers a shared language and a concrete structure for every client interaction. Care sits at the center: not as a step in a process, but as the underlying orientation that shapes every moment of the conversation.</p>
       <p class="case-body-text">The model wasn't designed to be a script. It was designed to be internalized — making explicit what the best bankers were already doing intuitively, in a form that could be taught, practiced, and measured.</p>
 
-      <img src="kb-model.png" alt="The Relationship Experience Model — 5 C's" class="case-img-editorial" />
+      <img src="kb-model.png" alt="The Relationship Experience Model — 5 C's" class="case-img-inset" />
       <p class="case-img-caption-editorial">The final Relationship Experience Model.</p>
+
+      <p class="case-body-text">Alongside the model, I designed and delivered a full L&D curriculum to support the network-wide rollout — including facilitator guides, role-play scenarios, skill practice modules, and leadership coaching tools. The training was built to be led by branch leaders, not dependent on a central team.</p>
+
+      <img src="kb-training.png" alt="Overview of the Relationship Experience Model training curriculum" class="case-img-training" />
+      <p class="case-img-caption-editorial">Training curriculum delivered across 900+ branches.</p>
     </div>
 
     <!-- OUTCOMES -->
     <div class="case-section">
       <div class="case-section-label">Outcomes</div>
       <h3>Measurable impact within 2 months of pilot</h3>
-      <p class="case-body-text">After piloting in Dayton, OH and iterating on the training materials, the model was rolled out network-wide with a full L&D curriculum. Results from the pilot market were clear within the first two months.</p>
+      <p class="case-body-text">After piloting in Dayton, OH and iterating on the training materials, the model was rolled out network-wide. Results from the pilot market were clear within the first two months.</p>
 
       <div class="outcome-grid">
         <div class="outcome-card">
