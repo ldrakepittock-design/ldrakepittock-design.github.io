@@ -865,7 +865,7 @@ footer a:hover {
 
 .hero-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   gap: 4rem;
 }
@@ -873,6 +873,7 @@ footer a:hover {
 .hero-photo-wrap {
   flex-shrink: 0;
   width: 220px;
+  padding-top: 5.5rem;
 }
 
 .hero-photo {
@@ -880,7 +881,7 @@ footer a:hover {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: center 10%;
+  object-position: 60% 18%;
   border: 3px solid var(--teal-light);
   display: block;
   flex-shrink: 0;
