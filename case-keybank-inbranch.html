@@ -15,6 +15,120 @@
   </script>
   <style>
     .case-hero { border-bottom: none; }
+
+    .case-body-text {
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.25rem;
+    }
+    .case-body-text:last-child { margin-bottom: 0; }
+
+    /* Full-width workshop photo */
+    .case-img-full {
+      display: block;
+      width: 100%;
+      margin: 2.5rem 0 0.75rem;
+      border-radius: var(--radius);
+      object-fit: cover;
+      max-height: 480px;
+    }
+
+    /* Inset model image */
+    .case-img-editorial {
+      display: block;
+      width: 60%;
+      margin: 2.5rem auto 0.75rem;
+      border-radius: var(--radius);
+    }
+
+    .case-img-caption-editorial {
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    /* Large display pull quote */
+    .pull-quote {
+      margin: 3.5rem 0;
+    }
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+      max-width: 800px;
+      margin-bottom: 1rem;
+    }
+    .pull-quote-attr {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* Meta table */
+    .case-meta-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--warm-line);
+      border-bottom: 1px solid var(--warm-line);
+      margin-bottom: 4.5rem;
+    }
+    .case-meta-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .case-meta-value {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    /* Mindsets table */
+    .mindsets-table {
+      width: 100%;
+      max-width: 680px;
+      border-collapse: collapse;
+      margin: 2rem 0 2.5rem;
+    }
+    .mindsets-table th {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      padding: 0 1.5rem 0.75rem 0;
+      text-align: left;
+      border-bottom: 1px solid var(--warm-line);
+    }
+    .mindsets-table td {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+      padding: 0.75rem 1.5rem 0.75rem 0;
+      border-bottom: 1px solid var(--warm-line);
+      vertical-align: top;
+    }
+    .mindsets-table td em {
+      color: var(--ink);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    @media (max-width: 768px) {
+      .case-meta-table { grid-template-columns: 1fr; }
+      .case-img-editorial { width: 100%; }
+    }
   </style>
 </head>
 <body class="case-body">
@@ -32,15 +146,13 @@
     <div class="case-hero-meta">
       <span class="case-tag">Service Design</span>
       <span class="case-tag">Research</span>
-      <span class="role-tag">Project Lead · Service Designer</span>
-      <span class="case-industry">Retail Banking</span>
+      <span class="case-industry">Retail Banking · KeyBank</span>
     </div>
 
     <h1 class="case-hero-title">How might we improve in-branch experiences?</h1>
 
-    <p class="case-hero-summary">A bank wanted to fundamentally shift how bankers interact with clients. I led a 4-month end-to-end project, from service blueprinting and ethnographic research to piloting and rolling out a new conversational model across 900+ branches.</p>
+    <p class="case-hero-summary">A bank wanted to fundamentally shift how bankers interact with clients. I led a 4-month end-to-end project — from ethnographic research and service blueprinting to piloting and rolling out a new conversational model across 900+ branches.</p>
 
-    <!-- Stats: 3 on first row, 2 on second -->
     <div class="case-hero-stats">
       <div class="stat-item">
         <span class="stat-value">+2.52</span>
@@ -54,154 +166,122 @@
         <span class="stat-value">900+</span>
         <span class="stat-label">Branches impacted</span>
       </div>
-    </div>
-    <div class="case-hero-stats" style="margin-top: 1.5rem;">
       <div class="stat-item">
         <span class="stat-value">14</span>
         <span class="stat-label">Interviews conducted</span>
-      </div>
-      <div class="stat-item">
-        <span class="stat-value">2</span>
-        <span class="stat-label">Cross-functional workshops led</span>
       </div>
     </div>
   </div>
 
   <div class="case-content">
 
-    <!-- CONTEXT -->
-    <div class="case-section" style="border-top: none;">
-      <div class="case-section-label">Context</div>
-      <h3>The opportunity</h3>
-      <div class="case-side-col case-side-col-equal" style="align-items: flex-start;">
-        <div class="case-side-col-text">
-          <p>KeyBank's retail branches were struggling with inconsistent client experiences. The quality of interactions between bankers and clients varied widely and leadership knew that the relationship between banker and client was a key differentiator in a competitive market.</p>
-          <p>As Project Lead and Service Designer, I was asked to scope and deliver a solution within 4 months that could realistically be implemented across the full branch network.</p>
-        </div>
-        <div class="case-side-col-img" style="align-self: flex-start;">
-          <img src="kb-tools.png" alt="Fragmented tools bankers were using" class="case-img-fill" style="max-height: 200px; object-fit: cover; object-position: top;" />
-          <p class="case-img-caption-sm">The fragmented toolkit bankers were navigating — a key driver of inconsistency.</p>
-        </div>
+    <!-- META ROW -->
+    <div class="case-meta-table">
+      <div>
+        <div class="case-meta-label">Role</div>
+        <div class="case-meta-value">Project Lead · Service Designer</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Industry</div>
+        <div class="case-meta-value">Retail Banking</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Methods</div>
+        <div class="case-meta-value">Service blueprinting · Stakeholder interviews · Ethnographic interviews · Narrative analysis · Co-design facilitation · Pilot design · L&D curriculum development</div>
       </div>
     </div>
 
-    <!-- PROCESS -->
+    <!-- CONTEXT -->
     <div class="case-section">
-      <div class="case-section-label">Process</div>
-      <h3>A full design cycle in four months</h3>
-
-      <div class="process-steps process-steps-3col">
-        <div class="process-step">
-          <span class="step-num">01</span>
-          <span class="step-title">Scope & Current State</span>
-          <span class="step-desc">Service blueprints + stakeholder workshop to map current state and surface opportunity areas</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">02</span>
-          <span class="step-title">Research</span>
-          <span class="step-desc">14 interviews with top-performing bankers across role, location, and tenure</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">03</span>
-          <span class="step-title">Synthesis</span>
-          <span class="step-desc">Narrative analysis revealed 5 core mindsets shared by the most successful teammates</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">04</span>
-          <span class="step-title">Ideation</span>
-          <span class="step-desc">20+ versions of a conversational model, workshopped down to 3 candidates with stakeholders</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">05</span>
-          <span class="step-title">Pilot & Iterate</span>
-          <span class="step-desc">Tested in a Dayton, OH pilot branch, measuring efficacy before network rollout</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">06</span>
-          <span class="step-title">Implement</span>
-          <span class="step-desc">Launched across 900+ branches with full training curriculum</span>
-        </div>
-      </div>
-
-      <div class="case-side-col case-side-col-equal" style="margin-top: 2.5rem; align-items: flex-start;">
-        <div class="case-side-col-text">
-          <p>The project involved two major cross-functional workshops — one to align stakeholders on the current state and another to ideate and pressure-test model candidates. Participants included teams from Sales Enablement, L&D, Corporate Communications, and Marketing.</p>
-          <div class="insight-block" style="margin-top: 1.5rem;">
-            <p><em>"Lauren did an amazing job — she demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and ability to lead the work and lead workshops."</em></p>
-            <p style="margin-top: 0.75rem; font-size: 0.82rem; color: var(--ink-muted);">— Victor Aranda, SVP Employee Experience</p>
-          </div>
-        </div>
-        <div class="case-side-col-img" style="align-self: flex-start;">
-          <img src="kb-facilitation.png" alt="Lauren facilitating a cross-functional workshop with KeyBank stakeholders" class="case-img-fill" style="object-fit: cover;" />
-          <p class="case-img-caption-sm">Cross-functional stakeholders during one of two workshops.</p>
-        </div>
-      </div>
+      <div class="case-section-label">Context</div>
+      <h3>The opportunity</h3>
+      <p class="case-body-text">KeyBank's retail branches were struggling with inconsistent client experiences. The quality of interactions between bankers and clients varied widely — and leadership knew that the banker-client relationship was a key differentiator in a competitive market.</p>
+      <p class="case-body-text">The challenge wasn't technology or products. It was the conversation itself. As Project Lead and Service Designer, I was asked to scope and deliver a solution within 4 months that could realistically be implemented across the full branch network.</p>
+      <p class="case-body-text">I started by mapping the current state through service blueprinting and a cross-functional stakeholder workshop — bringing together teams from Sales Enablement, L&D, Corporate Communications, and Marketing to build a shared picture of the problem before anyone started designing solutions.</p>
     </div>
 
     <!-- RESEARCH -->
     <div class="case-section">
       <div class="case-section-label">Research</div>
       <h3>Learning from the people already doing it well</h3>
+      <p class="case-body-text">Rather than designing from scratch, I recruited and led 14 in-depth interviews with bankers already known for creating exceptional client experiences — selected across roles, geographies, and tenure levels, from 9-month tellers to 24-year private client bankers across 6 states.</p>
+      <p class="case-body-text">The research question wasn't "what should bankers do differently?" It was "what are the best bankers already doing that others aren't?" That reframe changed everything about what we found.</p>
 
-      <div class="case-side-col case-side-col-equal">
-        <div class="case-side-col-text">
-          <p>Rather than designing from scratch, I recruited and led 14 in-depth interviews with bankers who were already known for creating exceptional client experiences. Bankers were selected across roles, geographies, and tenure levels.</p>
-          <p>Using narrative analysis, I surfaced 5 core mindsets that separated high performers from average ones.</p>
-          <div class="insight-block" style="margin-top: 1.5rem;">
-            <p>The most successful bankers think about <em>helping</em> clients rather than <em>selling</em> to clients. They rely on their team's expertise, not just their own. And they think about the interaction in and out of the branch, not just within it.</p>
-          </div>
-        </div>
-        <div class="case-side-col-img" style="align-self: flex-start;">
-          <img src="kb-research.png" alt="Overview of the 14 research participants" class="case-img-fill" style="object-fit: cover; object-position: top;" />
-          <p class="case-img-caption-sm">14 interviewees across roles, 6 states, and 9 months to 24 years of tenure.</p>
-        </div>
+      <div class="insight-block">
+        <p>The most successful bankers don't think about <em>selling</em> — they think about <em>helping</em>. They rely on their team's expertise, not just their own. And they think about the client relationship in and out of the branch, not just within it.</p>
       </div>
+
+      <p class="case-body-text">Using narrative analysis, I distilled the interviews into 5 core mindsets that separated high performers from average ones — not behaviors to prescribe, but ways of thinking that produced consistently better interactions.</p>
+
+      <table class="mindsets-table">
+        <thead>
+          <tr>
+            <th>Successful teammates think about…</th>
+            <th>Rather than…</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><em>Helping</em> their clients</td>
+            <td>Selling to clients</td>
+          </tr>
+          <tr>
+            <td>Relying on their <em>team's expertise</em></td>
+            <td>Relying on just their own expertise</td>
+          </tr>
+          <tr>
+            <td>The interaction <em>in and out of the branch</em></td>
+            <td>The interaction just in the branch</td>
+          </tr>
+          <tr>
+            <td>Creating <em>unique</em> experiences</td>
+            <td>Following just expected norms</td>
+          </tr>
+          <tr>
+            <td>Discovering <em>needs</em></td>
+            <td>Fulfilling wants</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
-    <!-- SYNTHESIS -->
+    <!-- PROCESS -->
     <div class="case-section">
-      <div class="case-section-label">Synthesis</div>
-      <h3>Five mindsets that define exceptional bankers</h3>
-      <p>Narrative analysis of the 14 interviews revealed a consistent pattern: the most successful bankers didn't just behave differently, they thought differently. I distilled this into 5 core mindsets that became the foundation for the model.</p>
+      <div class="case-section-label">Process</div>
+      <h3>From insight to model</h3>
+      <p class="case-body-text">The 5 mindsets became the foundation for design. In two major cross-functional workshops, I facilitated ideation with stakeholders across Sales Enablement, L&D, Corporate Communications, and Marketing — generating 20+ versions of a conversational model, pressure-testing 3 candidates with the group, and refining the final version into something a banker with any level of experience could internalize and apply.</p>
+    </div>
 
-      <div class="case-side-col case-side-col-equal" style="margin-top: 1.5rem;">
-        <div class="case-side-col-img">
-          <img src="kb-reframe.png" alt="5 mindsets framework" class="case-img-fill" style="max-height: 320px; object-fit: contain; background: white;" />
-          <p class="case-img-caption-sm">The 5 mindsets: translating research into design principles.</p>
-        </div>
-        <div class="case-side-col-img">
-          <img src="kb-insight.png" alt="Insight stories from bankers" class="case-img-fill" style="max-height: 320px; object-fit: contain; background: white;" />
-          <p class="case-img-caption-sm">Insight stories brought each mindset to life through real field examples.</p>
-        </div>
-      </div>
+    <!-- WORKSHOP PHOTO — full width, outside section -->
+    <img src="kb-facilitation.png" alt="Lauren facilitating a cross-functional workshop with KeyBank stakeholders" class="case-img-full" />
+    <p class="case-img-caption-editorial">Cross-functional stakeholders during one of two workshops.</p>
+
+    <!-- PULL QUOTE -->
+    <div class="pull-quote">
+      <p class="pull-quote-text">"Lauren did an amazing job — she demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and ability to lead the work and lead workshops."</p>
+      <p class="pull-quote-attr">— Victor Aranda, SVP Employee Experience, KeyBank</p>
     </div>
 
     <!-- DESIGN -->
     <div class="case-section">
       <div class="case-section-label">Design</div>
       <h3>The Relationship Experience Model</h3>
+      <p class="case-body-text">The final model — built around 5 C's: <strong>Care, Connect, Clarify, Carry Out,</strong> and <strong>Conclude and Continue</strong> — gave bankers a shared language and a concrete structure for every client interaction. Care sits at the center: not as a step in a process, but as the underlying orientation that shapes every moment of the conversation.</p>
+      <p class="case-body-text">The model wasn't designed to be a script. It was designed to be internalized — making explicit what the best bankers were already doing intuitively, in a form that could be taught, practiced, and measured.</p>
 
-      <div class="case-side-col case-side-col-equal">
-        <div class="case-side-col-text">
-          <p>I led the team to ideate over 20 versions of a conversational model, workshopped 3 candidates with cross-functional stakeholders (Sales Enablement, L&D, Corporate Communications, Marketing), and refined the final model into a teachable framework.</p>
-          <p>The final model, built around the 5 C's: Care, Connect, Clarify, Carry Out, and Conclude and Continue, gave bankers a shared language and a concrete structure for every client interaction.</p>
-        </div>
-        <div class="case-side-col-img" style="align-self: flex-start;">
-          <img src="kb-model.png" alt="The final Relationship Experience Model" class="case-img-fill" style="object-fit: contain; background: white;" />
-          <p class="case-img-caption-sm">The final Relationship Experience Model.</p>
-        </div>
-      </div>
+      <img src="kb-model.png" alt="The Relationship Experience Model — 5 C's" class="case-img-editorial" />
+      <p class="case-img-caption-editorial">The final Relationship Experience Model.</p>
     </div>
 
     <!-- OUTCOMES -->
     <div class="case-section">
       <div class="case-section-label">Outcomes</div>
       <h3>Measurable impact within 2 months of pilot</h3>
-      <p>After piloting in Dayton, OH and iterating on the training materials, the model was rolled out network-wide. Results from the pilot market showed clear improvement across all tracked metrics.</p>
+      <p class="case-body-text">After piloting in Dayton, OH and iterating on the training materials, the model was rolled out network-wide with a full L&D curriculum. Results from the pilot market were clear within the first two months.</p>
 
       <div class="outcome-grid">
         <div class="outcome-card">
-          <div class="stat-value">84 to 87</div>
+          <div class="stat-value">84 → 87</div>
           <div class="stat-label">NPS — from rank 13 to rank 2 in market</div>
         </div>
         <div class="outcome-card">
@@ -223,7 +303,7 @@
     <div class="case-section">
       <div class="case-section-label">Reflection</div>
       <h3>What I'd do differently</h3>
-      <p>The biggest gap in our research was not seeing the work in context. Budget constraints kept me from conducting in-branch observation, which meant our insights came entirely from what bankers told us, not what we watched them do. Behavioral research in the actual environment would have surfaced edge cases and workarounds we couldn't have anticipated from interviews alone. If I ran this project again, in-branch observation would be non-negotiable.</p>
+      <p class="case-body-text">The biggest gap in our research was not seeing the work in context. Budget constraints kept me from conducting in-branch observation, which meant our insights came entirely from what bankers told us — not what we watched them do. Behavioral research in the actual environment would have surfaced edge cases and workarounds we couldn't have anticipated from interviews alone. If I ran this project again, in-branch observation would be non-negotiable.</p>
     </div>
 
   </div>
@@ -248,6 +328,13 @@
       <a href="mailto:ldrakepittock@gmail.com">ldrakepittock@gmail.com</a>
     </div>
   </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
 
 </body>
 </html>
