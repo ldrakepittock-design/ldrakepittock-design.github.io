@@ -843,6 +843,22 @@ footer a:hover {
   color: var(--teal);
 }
 
+/* Case study images */
+.case-img {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+  margin: 2rem 0 0.75rem;
+}
+
+.case-img-caption {
+  font-size: 0.78rem;
+  color: var(--ink-muted);
+  line-height: 1.5;
+  margin-bottom: 0;
+  font-style: italic;
+}
+
 /* ===========================
    HOMEPAGE HERO WITH PHOTO
    =========================== */
