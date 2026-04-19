@@ -924,7 +924,7 @@ footer a:hover {
 .hero-photo-wrap {
   flex-shrink: 0;
   width: 220px;
-  padding-top: 3rem;
+  padding-top: 1rem;
 }
 
 .hero-photo {
@@ -932,7 +932,7 @@ footer a:hover {
   height: 220px;
   border-radius: 50%;
   object-fit: cover;
-  object-position: 55% 18%;
+  object-position: 65% 18%;
   border: 3px solid var(--teal-light);
   display: block;
   flex-shrink: 0;
