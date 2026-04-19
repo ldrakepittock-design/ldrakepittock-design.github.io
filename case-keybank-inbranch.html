@@ -70,29 +70,53 @@
       max-height: 480px;
     }
 
-    /* Inset centered image */
-    .case-img-inset {
-      display: block;
-      width: 42%;
-      margin: 2.5rem auto 0.75rem;
-      border-radius: var(--radius);
-    }
-
-    /* Small training grid image */
-    .case-img-training {
-      display: block;
-      width: 55%;
-      margin: 2rem auto 0.75rem;
-      border-radius: var(--radius);
-      opacity: 0.92;
-    }
 
     .case-img-caption-editorial {
-      text-align: center;
-      font-size: 0.78rem;
+      text-align: left;
+      font-size: 0.72rem;
       color: var(--ink-muted);
       font-style: italic;
       margin-bottom: 2.5rem;
+    }
+
+    /* Caption wrapper aligned to inset image width */
+    .case-img-inset-wrap {
+      width: 42%;
+      margin: 2.5rem auto 2.5rem;
+    }
+    .case-img-inset-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+    }
+    .case-img-inset-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    /* Caption wrapper aligned to training image width */
+    .case-img-training-wrap {
+      width: 55%;
+      margin: 2rem auto 2.5rem;
+    }
+    .case-img-training-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      opacity: 0.92;
+    }
+    .case-img-training-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    /* Process: text left, quote box right */
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .process-layout { grid-template-columns: 1fr; }
+      .case-img-inset-wrap,
+      .case-img-training-wrap { width: 100%; }
     }
 
     /* Large display pull quote */
@@ -336,18 +360,21 @@
     <div class="case-section">
       <div class="case-section-label">Process</div>
       <h3>From insight to model</h3>
-      <p class="case-body-text">The 5 mindsets became the foundation for design. In two major cross-functional workshops, I facilitated ideation with stakeholders across Sales Enablement, L&D, Corporate Communications, and Marketing — generating 20+ versions of a conversational model, pressure-testing 3 candidates with the group, and refining the final version into something any banker could internalize and apply.</p>
+      <div class="process-layout">
+        <div>
+          <p class="case-body-text">The project involved two major cross-functional workshops. The first brought together stakeholders across Sales Enablement, L&D, Corporate Communications, and Marketing to map the current state through service blueprinting — building a shared picture of what was and wasn't working before anyone started designing solutions.</p>
+          <p class="case-body-text">With alignment on the problem, the 5 mindsets from the research became the foundation for design. In the second workshop, I facilitated ideation that generated 20+ versions of a conversational model, then pressure-tested 3 candidates with the group before refining the final version into something any banker could internalize and apply.</p>
+        </div>
+        <div class="quote-box" style="margin: 0;">
+          <p>"Lauren did an amazing job — she demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and ability to lead the work and lead workshops."</p>
+          <span class="quote-box-attr">— Victor Aranda, SVP Employee Experience, KeyBank</span>
+        </div>
+      </div>
     </div>
 
     <!-- WORKSHOP PHOTO — full width -->
     <img src="kb-facilitation.png" alt="Lauren facilitating a cross-functional workshop with KeyBank stakeholders" class="case-img-full" />
     <p class="case-img-caption-editorial">Cross-functional stakeholders during one of two workshops.</p>
-
-    <!-- VICTOR QUOTE — white box style -->
-    <div class="quote-box">
-      <p>"Lauren did an amazing job — she demonstrated a high degree of originality and creativity and helped us explore new paths on our client experience model. I appreciated her leadership and ability to lead the work and lead workshops."</p>
-      <span class="quote-box-attr">— Victor Aranda, SVP Employee Experience, KeyBank</span>
-    </div>
 
     <!-- DESIGN -->
     <div class="case-section">
@@ -356,13 +383,17 @@
       <p class="case-body-text">The final model — built around 5 C's: <strong>Care, Connect, Clarify, Carry Out,</strong> and <strong>Conclude and Continue</strong> — gave bankers a shared language and a concrete structure for every client interaction. Care sits at the center: not as a step in a process, but as the underlying orientation that shapes every moment of the conversation.</p>
       <p class="case-body-text">The model wasn't designed to be a script. It was designed to be internalized — making explicit what the best bankers were already doing intuitively, in a form that could be taught, practiced, and measured.</p>
 
-      <img src="kb-model.png" alt="The Relationship Experience Model — 5 C's" class="case-img-inset" />
-      <p class="case-img-caption-editorial">The final Relationship Experience Model.</p>
+      <div class="case-img-inset-wrap">
+        <img src="kb-model.png" alt="The Relationship Experience Model — 5 C's" />
+        <p class="case-img-caption-editorial">The final Relationship Experience Model.</p>
+      </div>
 
       <p class="case-body-text">Alongside the model, I designed and delivered a full L&D curriculum to support the network-wide rollout — including facilitator guides, role-play scenarios, skill practice modules, and leadership coaching tools. The training was built to be led by branch leaders, not dependent on a central team.</p>
 
-      <img src="kb-training.png" alt="Overview of the Relationship Experience Model training curriculum" class="case-img-training" />
-      <p class="case-img-caption-editorial">Training curriculum delivered across 900+ branches.</p>
+      <div class="case-img-training-wrap">
+        <img src="kb-training.png" alt="Overview of the Relationship Experience Model training curriculum" />
+        <p class="case-img-caption-editorial">Training curriculum delivered across 900+ branches.</p>
+      </div>
     </div>
 
     <!-- OUTCOMES -->
