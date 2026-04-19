@@ -843,6 +843,57 @@ footer a:hover {
   color: var(--teal);
 }
 
+/* Case study side-by-side layout */
+.case-side-col {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 2.5rem;
+  align-items: start;
+  margin-top: 1.5rem;
+}
+
+.case-side-col-text p {
+  font-size: 1rem;
+  color: var(--ink-light);
+  line-height: 1.85;
+  margin-bottom: 1rem;
+}
+
+.case-side-col-text p:last-child {
+  margin-bottom: 0;
+}
+
+.case-img-small {
+  width: 100%;
+  border-radius: var(--radius);
+  display: block;
+}
+
+/* Role tag in hero meta */
+.role-tag {
+  font-size: 0.72rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  color: var(--ink-muted);
+  border: 1px solid var(--warm-line);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+}
+
+/* 3-column process steps */
+.process-steps-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (max-width: 768px) {
+  .case-side-col {
+    grid-template-columns: 1fr;
+  }
+  .process-steps-3col {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* Case study images */
 .case-img {
   width: 100%;
