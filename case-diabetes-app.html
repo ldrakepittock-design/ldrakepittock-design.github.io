@@ -13,13 +13,221 @@
       window.location.href = "gate.html?case=diabetes-app";
     }
   </script>
+  <style>
+    .case-hero { border-bottom: none; }
+
+    .case-body-text {
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.25rem;
+    }
+    .case-body-text:last-child { margin-bottom: 0; }
+
+    .case-body-list {
+      max-width: 680px;
+      margin: 0 0 1.25rem 0;
+      padding-left: 1.4rem;
+      color: var(--ink-light);
+      font-size: 1rem;
+      line-height: 1.85;
+    }
+    .case-body-list li {
+      margin-bottom: 0.4rem;
+    }
+
+    .context-layout {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+    .context-img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
+    }
+    .context-img-caption {
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-top: 0.5rem;
+      line-height: 1.5;
+    }
+
+    .case-img-full {
+      display: block;
+      width: 100%;
+      margin: 2.5rem 0 0.75rem;
+      border-radius: var(--radius);
+      object-fit: cover;
+      max-height: 480px;
+    }
+
+    .case-img-caption-editorial {
+      text-align: left;
+      font-size: 0.72rem;
+      color: var(--ink-muted);
+      font-style: italic;
+      margin-bottom: 2.5rem;
+    }
+
+    .case-img-inset-wrap {
+      width: 42%;
+      margin: 2.5rem auto 2.5rem;
+    }
+    .case-img-inset-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+    }
+    .case-img-inset-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    .case-img-training-wrap {
+      width: 55%;
+      margin: 2rem auto 2.5rem;
+    }
+    .case-img-training-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      opacity: 0.92;
+    }
+    .case-img-training-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 900px) {
+      .process-layout { grid-template-columns: 1fr; }
+      .context-layout { grid-template-columns: 1fr; }
+      .case-img-inset-wrap,
+      .case-img-training-wrap { width: 100%; }
+    }
+
+    .pull-quote {
+      margin: 3.5rem 0;
+    }
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+      max-width: 800px;
+      margin-bottom: 1rem;
+    }
+    .pull-quote-attr {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    .quote-box {
+      background: var(--white);
+      border: 1px solid var(--warm-line);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem 2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 2rem 0;
+      max-width: 680px;
+    }
+    .quote-box p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.6;
+      margin: 0 0 0.6rem;
+    }
+    .quote-box-attr {
+      font-size: 0.78rem;
+      color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    .case-meta-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--warm-line);
+      border-bottom: 1px solid var(--warm-line);
+      margin-bottom: 4.5rem;
+    }
+    .case-meta-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .case-meta-value {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    .mindsets-table {
+      width: 100%;
+      max-width: 680px;
+      border-collapse: collapse;
+      margin: 2rem 0 2.5rem;
+    }
+    .mindsets-table th {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-align: left;
+      padding: 0.6rem 1rem 0.6rem 0;
+      border-bottom: 1px solid var(--warm-line);
+    }
+    .mindsets-table td {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.6;
+      padding: 0.75rem 1rem 0.75rem 0;
+      border-bottom: 1px solid var(--warm-line);
+      vertical-align: top;
+    }
+    .mindsets-table tr:last-child td { border-bottom: none; }
+
+    /* Insight callout */
+    .insight-callout {
+      background: var(--white);
+      border: 1px solid var(--warm-line);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem 2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 2rem 0 2rem;
+      max-width: 680px;
+    }
+    .insight-callout p {
+      font-family: var(--serif);
+      font-size: 1.05rem;
+      font-style: italic;
+      color: var(--ink);
+      line-height: 1.65;
+      margin: 0;
+    }
+  </style>
 </head>
 <body class="case-body">
 
   <nav>
     <a href="index.html" class="nav-name">Lauren Pittock</a>
-    <div class="nav-links">
-    </div>
+    <div class="nav-links"></div>
   </nav>
 
   <div class="case-hero">
@@ -28,17 +236,18 @@
     <div class="case-hero-meta">
       <span class="case-tag">Research</span>
       <span class="case-tag">Product Strategy</span>
-      <span class="case-industry">Healthcare · Diabetes Manufacturer</span>
+      <span class="case-tag">Concept Design</span>
+      <span class="case-industry">Healthcare · Medical Device</span>
     </div>
 
     <h1 class="case-hero-title">How might we engage people with diabetes?</h1>
 
-    <p class="case-hero-summary">A diabetes device manufacturer wanted to build a daily-use app. Research revealed something unexpected: people with diabetes avoid diabetes. That single insight pivoted the entire product strategy — and opened up a market nearly 10x larger than originally scoped.</p>
+    <p class="case-hero-summary">A diabetes device manufacturer wanted to build a daily-use app. Research revealed something unexpected: people with diabetes actively avoid diabetes. That single insight pivoted the entire product strategy — and opened up a market nearly 50x larger than originally scoped.</p>
 
     <div class="case-hero-stats">
       <div class="stat-item">
         <span class="stat-value">~300M</span>
-        <span class="stat-label">Potential new customers identified</span>
+        <span class="stat-label">Potential customers identified through market reframe</span>
       </div>
       <div class="stat-item">
         <span class="stat-value">69%</span>
@@ -46,124 +255,144 @@
       </div>
       <div class="stat-item">
         <span class="stat-value">4</span>
-        <span class="stat-label">Core app features designed</span>
+        <span class="stat-label">Core app features designed and prototyped for testing</span>
       </div>
     </div>
   </div>
 
   <div class="case-content">
 
+    <!-- META ROW -->
+    <div class="case-meta-table">
+      <div>
+        <div class="case-meta-label">Role</div>
+        <div class="case-meta-value">Content Contributor</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Industry</div>
+        <div class="case-meta-value">Healthcare · Medical Device</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Methods</div>
+        <div class="case-meta-value">Secondary research · Competitive benchmarking · Market sizing · Diary study · Virtual ethnographic interviews · Insight synthesis · Strategic imperative development · App prototyping</div>
+      </div>
+    </div>
+
     <!-- CONTEXT -->
     <div class="case-section">
       <div class="case-section-label">Context</div>
       <h3>Building for people who don't want to be reminded they're sick</h3>
-      <p>A major diabetes device manufacturer wanted to create an app to engage people with diabetes (PWDs) on a daily basis — with the hope of becoming a trusted part of their health routine. The challenge: existing diabetes apps had poor engagement and high churn.</p>
-      <p>As Content Contributor, I focused on the research, insight development, and strategic recommendations — working alongside a team of designers who shaped the concept.</p>
-      <div class="role-pill">Role: Content Contributor</div>
+
+      <div class="context-layout">
+        <div>
+          <p class="case-body-text">A major diabetes device manufacturer wanted to create an app that engaged people with diabetes on a daily basis — with the goal of becoming a trusted part of their health routine. The problem was well-documented: existing diabetes apps had poor engagement and high churn, but no one had a clear explanation for why.</p>
+          <p class="case-body-text">As Content Contributor, I focused on the research, insight development, and strategic recommendations. A team of designers shaped the concept in parallel. My work drove the strategic reframe that defined the product direction.</p>
+        </div>
+        <div>
+          <img src="diabetes-concept-board.png" alt="In-progress concept board showing app framework sketches and sticky note clustering" class="context-img" />
+          <p class="context-img-caption">Early-stage concept board — framework sketches and affinity clustering from the synthesis phase.</p>
+        </div>
+      </div>
     </div>
 
-    <!-- PROCESS -->
+    <!-- RESEARCH -->
     <div class="case-section">
-      <div class="case-section-label">Process</div>
-      <h3>Research-driven product strategy</h3>
+      <div class="case-section-label">Research</div>
+      <h3>What happens when you don't mention diabetes</h3>
 
-      <div class="process-steps">
-        <div class="process-step">
-          <span class="step-num">01</span>
-          <span class="step-title">Secondary Research</span>
-          <span class="step-desc">Behavior change literature + competitive benchmarking of existing health apps</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">02</span>
-          <span class="step-title">Market Sizing</span>
-          <span class="step-desc">Assessed potential market beyond diagnosed, insulin-treated diabetes</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">03</span>
-          <span class="step-title">Diary Study</span>
-          <span class="step-desc">Single-entry diary study with PWDs, then virtual ethnographic interviews</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">04</span>
-          <span class="step-title">Insight Synthesis</span>
-          <span class="step-desc">Identified core shame-not-guilt dynamic and avoidance behaviors</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">05</span>
-          <span class="step-title">Strategy</span>
-          <span class="step-desc">Strategic imperatives, design principles, and reframed market positioning</span>
-        </div>
-        <div class="process-step">
-          <span class="step-num">06</span>
-          <span class="step-title">Concept</span>
-          <span class="step-desc">App prototype across 4 features for usability testing</span>
-        </div>
+      <p class="case-body-text">The most consequential methodological decision on this project was a simple one: we conducted the study as a general health and wellness study without disclosing the diabetes focus. The results were immediate and clarifying. Participants did not bring up diabetes until directly asked. They talked about their sleep, stress, exercise, and relationships — and avoided the topic entirely.</p>
+
+      <p class="case-body-text">The research combined secondary research on behavior change and competitive benchmarking with a single-entry diary study followed by virtual ethnographic interviews with people with diabetes. Across participants, two findings held consistently:</p>
+
+      <ul class="case-body-list">
+        <li>People with diabetes feel <em>shame</em> rather than guilt about their condition. Guilt says "I did something bad." Shame says "I am something bad." Diabetes apps that lead with diabetes reinforce that shame response.</li>
+        <li>69% of apps that PWDs use to manage their health are wellness apps, not diabetes apps. People were already solving for this — just without a diabetes-specific product.</li>
+      </ul>
+
+      <div class="insight-callout">
+        <p>"My sobriety is a priority." One participant mentioned past drug abuse and jail time early in the interview, but it took significant probing to get to diabetes. He uses apps and trackers to manage his health — he just doesn't frame them as diabetes tools.</p>
       </div>
     </div>
 
-    <!-- KEY INSIGHT -->
-    <div class="case-section">
-      <div class="case-section-label">Key Insight</div>
-      <h3>Shame, not guilt — a distinction that changed everything</h3>
-      <p>One of the most striking moments of the research: when we conducted the study as a general "health and wellness" study (without mentioning diabetes), participants didn't bring up diabetes until directly asked. They talked about their sleep, exercise, stress — and avoided the topic entirely.</p>
-
-      <div class="insight-block">
-        <p>People with diabetes feel <em>shame</em> — not guilt — about their condition. Guilt says "I did something bad." Shame says "I am something bad." Diabetes apps that lead with diabetes reinforce that shame. The product had to work with their identity, not against it.</p>
-      </div>
-
-      <p>A second key finding: 69% of apps used by PWDs to manage their health are wellness apps — not diabetes apps. People were already solving for this, just without a diabetes-specific product. This revealed both the problem and the opportunity.</p>
-
-      <div class="img-placeholder">
-        <div class="img-placeholder-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
-        </div>
-        <span class="img-placeholder-text">Add your research insight artifacts or participant quotes here</span>
-      </div>
-    </div>
+    <!-- Full-width research slide -->
+    <img src="diabetes-participant-quotes.png" alt="Research slide showing participant avoidance behaviors and the 69% wellness app statistic" class="case-img-full" />
+    <p class="case-img-caption-editorial">Participant stories illustrating avoidance of diabetes identity — a pattern that held across all interviews.</p>
 
     <!-- STRATEGY -->
     <div class="case-section">
       <div class="case-section-label">Strategy</div>
-      <h3>Reframe: from diabetes management to metabolic health</h3>
-      <p>The research led to a fundamental strategic pivot. Instead of building a diabetes app, we recommended building a <em>metabolic health</em> app — one that could appeal to PWDs without triggering shame, while simultaneously opening the product up to the vastly larger pre-diabetes and metabolic health market.</p>
-      <p>This reframe expanded the addressable market from ~6M insulin-treated Type 2 patients to nearly 300M people with some connection to metabolic health — a 50x expansion of potential reach.</p>
+      <h3>From diabetes management to metabolic health</h3>
 
-      <div class="outcome-grid">
-        <div class="outcome-card">
-          <div class="stat-value">6M</div>
-          <div class="stat-label">Original addressable market (insulin-treated T2D)</div>
+      <div class="process-layout">
+        <div>
+          <p class="case-body-text">The research led to a strategic pivot with real market consequences. Instead of building a diabetes app, we recommended building a metabolic health app — one that could appeal to people with diabetes without triggering the shame response, while simultaneously expanding the product's addressable market.</p>
+          <p class="case-body-text">The original scope was approximately 6M insulin-treated Type 2 patients. Reframing around metabolic health opened the product to Type 2 non-insulin users (32.7M), pre-diabetics (88M), and the metabolically unhealthy (161.7M) — a potential market of nearly 300M people who share a common underlying need.</p>
+          <p class="case-body-text">A parallel strategic imperative: go direct to consumers before engaging physicians and payers. Building for payers first creates the risk of producing an over-medicalized product that alienates the very users it needs to reach. Consumer adoption drives provider and payer engagement — not the other way around.</p>
         </div>
-        <div class="outcome-card">
-          <div class="stat-value">~300M</div>
-          <div class="stat-label">Expanded market (metabolic health framing)</div>
-        </div>
-        <div class="outcome-card">
-          <div class="stat-value">88M</div>
-          <div class="stat-label">Pre-diabetic Americans alone</div>
+        <div class="quote-box" style="margin: 0;">
+          <p>"Lauren gets it done. And she doesn't skimp on quality. In working on the diabetes market, Lauren pushed until she made it work after a week of searching. She set up a time with another teammate to ask for help, created Excel models, and cracked it. It was a tour-de-initiative and acuity that I could never have done."</p>
+          <span class="quote-box-attr">— Brady Bates, Jump Associates (now Salesforce)</span>
         </div>
       </div>
+    </div>
+
+    <!-- Market chart — inset -->
+    <div class="case-img-inset-wrap">
+      <img src="diabetes-market-chart.png" alt="U.S. diabetes prevalence and projected growth chart showing expanded addressable market" />
+      <p class="case-img-caption-editorial">The expanded addressable market: from insulin-treated diabetes to the full metabolic health segment.</p>
     </div>
 
     <!-- CONCEPT -->
     <div class="case-section">
       <div class="case-section-label">Concept</div>
       <h3>A wellness app that helps you find habits that work for you</h3>
-      <p>The resulting concept was a metabolic wellness app built around four core features: Track (health metrics that matter most to you), Insights (understand what's affecting your body), Explore (tips and reflections from people like you), and Try (experiment with new habits safely). Five design attributes — Simple, Empowering, Joyful, Safe, Fulfilling — guided every design decision.</p>
 
-      <div class="img-placeholder">
-        <div class="img-placeholder-icon">
-          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+      <p class="case-body-text">The resulting concept — a metabolic wellness app called In Touch — was built around four core features. Track lets users monitor the health metrics that matter most to them. Insights reveals connections between their behaviors and how they feel. Explore surfaces tips and reflections from a matched community of people with similar physiological profiles. Try lets users pick habits to experiment with over a defined period.</p>
+
+      <p class="case-body-text">Five design attributes guided every decision: Simple, Empowering, Joyful, Safe, and Fulfilling. The framing was deliberate — none of the attributes reference diabetes. The product was designed to feel like a wellness tool first, not a disease management tool.</p>
+    </div>
+
+    <!-- Four screens — full width -->
+    <img src="diabetes-four-screens.png" alt="Four app screens showing Track, Insights, Explore, and Try features" class="case-img-full" />
+    <p class="case-img-caption-editorial">The four core features of the metabolic wellness app concept, prototyped for usability testing.</p>
+
+    <!-- Design attributes — inset -->
+    <div class="case-img-inset-wrap">
+      <img src="diabetes-design-attributes.png" alt="Five design attributes: Simple, Empowering, Joyful, Safe, Fulfilling" />
+      <p class="case-img-caption-editorial">Five design attributes, none of which reference diabetes — an intentional strategic choice.</p>
+    </div>
+
+    <!-- OUTCOMES -->
+    <div class="case-section">
+      <div class="case-section-label">Outcomes</div>
+      <h3>A strategic pivot backed by research</h3>
+      <p class="case-body-text">The project delivered a reframed product strategy, a validated market expansion rationale, and a prototyped app concept ready for usability testing. The core recommendation — lead with metabolic health, go direct to consumers, and design out the shame trigger — held across every dimension of the research.</p>
+
+      <div class="outcome-grid">
+        <div class="outcome-card">
+          <div class="stat-value">6M → ~300M</div>
+          <div class="stat-label">Addressable market expansion through metabolic health reframe</div>
         </div>
-        <span class="img-placeholder-text">Add your app concept screens or feature framework here</span>
+        <div class="outcome-card">
+          <div class="stat-value">69%</div>
+          <div class="stat-label">Of PWD app usage is wellness apps — the market signal that anchored the pivot</div>
+        </div>
+        <div class="outcome-card">
+          <div class="stat-value">4 features</div>
+          <div class="stat-label">Prototyped and tested: Track, Insights, Explore, Try</div>
+        </div>
+        <div class="outcome-card">
+          <div class="stat-value">5 principles</div>
+          <div class="stat-label">Design attributes guiding the full product experience</div>
+        </div>
       </div>
     </div>
 
-    <!-- REFLECTION -->
+    <!-- WHAT I LEARNED -->
     <div class="case-section">
-      <div class="case-section-label">Reflection</div>
-      <h3>What I'd do differently</h3>
-      <p>The decision to blind participants on the research topic was one of the most valuable methodological choices on this project — and one I'd replicate on any health or sensitive-topic research. It removed the social desirability bias that would have colored every response if participants knew we were studying diabetes specifically.</p>
-      <p>If I were running this again, I'd push for more participatory methods earlier — co-design sessions with PWDs, not just interviews. The diary study gave us rich behavioral data, but co-creation would have allowed participants to help us design solutions, not just surface problems.</p>
+      <div class="case-section-label">What I learned</div>
+      <h3>On the value of blinding the research topic</h3>
+      <p class="case-body-text">Deciding to conduct the study as a general health and wellness study rather than a diabetes study was the most valuable methodological choice on this project — and one I now build into any research involving stigmatized conditions. Social desirability bias is particularly acute when the study topic carries shame; disclosing the focus upfront shapes every response before a single question is asked. The blinded design removed that distortion and surfaced the avoidance behavior that became the cornerstone of the entire strategy. The insight was not hiding — it just needed a research design that wouldn't scare it off.</p>
     </div>
 
   </div>
@@ -171,8 +400,8 @@
   <div class="case-nav">
     <div>
       <div class="case-nav-label">Next case study</div>
-      <a href="gate.html?case=marketing-offers">
-        <div class="case-nav-title">How might we simplify marketing offers? →</div>
+      <a href="gate.html?case=keybank-inbranch">
+        <div class="case-nav-title">How might we create consistent client experiences? →</div>
       </a>
     </div>
     <a href="index.html" style="font-size:0.82rem; color: var(--ink-muted); letter-spacing:0.05em;">← Back to all work</a>
@@ -188,6 +417,13 @@
       <a href="mailto:ldrakepittock@gmail.com">ldrakepittock@gmail.com</a>
     </div>
   </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
 
 </body>
 </html>
