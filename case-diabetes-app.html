@@ -106,11 +106,31 @@
       margin-top: 1.5rem;
     }
 
+    /* Two-column image grid for side-by-side artifacts */
+    .case-img-pair {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin: 2.5rem 0;
+      align-items: start;
+    }
+    .case-img-pair-item img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      opacity: 0.92;
+    }
+    .case-img-pair-item .case-img-caption-editorial {
+      margin-bottom: 0;
+      margin-top: 0.5rem;
+    }
+
     @media (max-width: 900px) {
       .process-layout { grid-template-columns: 1fr; }
       .context-layout { grid-template-columns: 1fr; }
       .case-img-inset-wrap,
       .case-img-training-wrap { width: 100%; }
+      .case-img-pair { grid-template-columns: 1fr; }
     }
 
     .pull-quote {
@@ -202,25 +222,6 @@
       vertical-align: top;
     }
     .mindsets-table tr:last-child td { border-bottom: none; }
-
-    /* Insight callout */
-    .insight-callout {
-      background: var(--white);
-      border: 1px solid var(--warm-line);
-      border-left: 3px solid var(--teal);
-      padding: 1.5rem 2rem;
-      border-radius: 0 var(--radius) var(--radius) 0;
-      margin: 2rem 0 2rem;
-      max-width: 680px;
-    }
-    .insight-callout p {
-      font-family: var(--serif);
-      font-size: 1.05rem;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.65;
-      margin: 0;
-    }
   </style>
 </head>
 <body class="case-body">
@@ -237,12 +238,12 @@
       <span class="case-tag">Research</span>
       <span class="case-tag">Product Strategy</span>
       <span class="case-tag">Concept Design</span>
-      <span class="case-industry">Healthcare · Medical Device</span>
+      <span class="case-industry">Healthcare</span>
     </div>
 
     <h1 class="case-hero-title">How might we engage people with diabetes?</h1>
 
-    <p class="case-hero-summary">A diabetes device manufacturer wanted to build a daily-use app. Research revealed something unexpected: people with diabetes actively avoid diabetes. That single insight pivoted the entire product strategy — and opened up a market nearly 50x larger than originally scoped.</p>
+    <p class="case-hero-summary">A diabetes device manufacturer wanted to build a daily-use app. Research revealed something unexpected: people with diabetes actively avoid diabetes. That single insight pivoted the entire product strategy and opened up a market nearly 50x larger than originally scoped.</p>
 
     <div class="case-hero-stats">
       <div class="stat-item">
@@ -270,7 +271,7 @@
       </div>
       <div>
         <div class="case-meta-label">Industry</div>
-        <div class="case-meta-value">Healthcare · Medical Device</div>
+        <div class="case-meta-value">Healthcare</div>
       </div>
       <div>
         <div class="case-meta-label">Methods</div>
@@ -281,16 +282,16 @@
     <!-- CONTEXT -->
     <div class="case-section">
       <div class="case-section-label">Context</div>
-      <h3>Building for people who don't want to be reminded they're sick</h3>
+      <h3>From hardware to habit</h3>
 
       <div class="context-layout">
         <div>
-          <p class="case-body-text">A major diabetes device manufacturer wanted to create an app that engaged people with diabetes on a daily basis — with the goal of becoming a trusted part of their health routine. The problem was well-documented: existing diabetes apps had poor engagement and high churn, but no one had a clear explanation for why.</p>
-          <p class="case-body-text">As Content Contributor, I focused on the research, insight development, and strategic recommendations. A team of designers shaped the concept in parallel. My work drove the strategic reframe that defined the product direction.</p>
+          <p class="case-body-text">A major diabetes device manufacturer had built its business around physical products. With the category shifting toward digital health, they wanted to expand into software and create an app that engaged people with diabetes on a daily basis. The goal was to become a trusted part of their health routine, not just a tool they reached for at the doctor's office.</p>
+          <p class="case-body-text">As Content Contributor, I led the research, insight development, and strategic recommendations. A team of designers shaped the concept in parallel. My work drove the strategic reframe that defined the product direction.</p>
         </div>
         <div>
           <img src="diabetes-concept-board.png" alt="In-progress concept board showing app framework sketches and sticky note clustering" class="context-img" />
-          <p class="context-img-caption">Early-stage concept board — framework sketches and affinity clustering from the synthesis phase.</p>
+          <p class="context-img-caption">Early-stage concept board from the synthesis phase.</p>
         </div>
       </div>
     </div>
@@ -298,25 +299,17 @@
     <!-- RESEARCH -->
     <div class="case-section">
       <div class="case-section-label">Research</div>
-      <h3>What happens when you don't mention diabetes</h3>
+      <h3>People see themselves as people, not patients</h3>
 
-      <p class="case-body-text">The most consequential methodological decision on this project was a simple one: we conducted the study as a general health and wellness study without disclosing the diabetes focus. The results were immediate and clarifying. Participants did not bring up diabetes until directly asked. They talked about their sleep, stress, exercise, and relationships — and avoided the topic entirely.</p>
+      <p class="case-body-text">The research combined secondary research on behavior change and competitive benchmarking with a single-entry diary study followed by virtual ethnographic interviews with people with diabetes. A key methodological choice shaped everything: we ran the study as a general health and wellness study without disclosing the diabetes focus. Participants did not bring up diabetes until directly asked. They talked about their sleep, stress, exercise, and relationships and avoided the topic entirely.</p>
 
-      <p class="case-body-text">The research combined secondary research on behavior change and competitive benchmarking with a single-entry diary study followed by virtual ethnographic interviews with people with diabetes. Across participants, two findings held consistently:</p>
+      <p class="case-body-text">Two findings held consistently across participants:</p>
 
       <ul class="case-body-list">
         <li>People with diabetes feel <em>shame</em> rather than guilt about their condition. Guilt says "I did something bad." Shame says "I am something bad." Diabetes apps that lead with diabetes reinforce that shame response.</li>
-        <li>69% of apps that PWDs use to manage their health are wellness apps, not diabetes apps. People were already solving for this — just without a diabetes-specific product.</li>
+        <li>69% of apps that PWDs use to manage their health are wellness apps, not diabetes apps. People were already solving for this, just without a diabetes-specific product.</li>
       </ul>
-
-      <div class="insight-callout">
-        <p>"My sobriety is a priority." One participant mentioned past drug abuse and jail time early in the interview, but it took significant probing to get to diabetes. He uses apps and trackers to manage his health — he just doesn't frame them as diabetes tools.</p>
-      </div>
     </div>
-
-    <!-- Full-width research slide -->
-    <img src="diabetes-participant-quotes.png" alt="Research slide showing participant avoidance behaviors and the 69% wellness app statistic" class="case-img-full" />
-    <p class="case-img-caption-editorial">Participant stories illustrating avoidance of diabetes identity — a pattern that held across all interviews.</p>
 
     <!-- STRATEGY -->
     <div class="case-section">
@@ -327,7 +320,7 @@
         <div>
           <p class="case-body-text">The research led to a strategic pivot with real market consequences. Instead of building a diabetes app, we recommended building a metabolic health app — one that could appeal to people with diabetes without triggering the shame response, while simultaneously expanding the product's addressable market.</p>
           <p class="case-body-text">The original scope was approximately 6M insulin-treated Type 2 patients. Reframing around metabolic health opened the product to Type 2 non-insulin users (32.7M), pre-diabetics (88M), and the metabolically unhealthy (161.7M) — a potential market of nearly 300M people who share a common underlying need.</p>
-          <p class="case-body-text">A parallel strategic imperative: go direct to consumers before engaging physicians and payers. Building for payers first creates the risk of producing an over-medicalized product that alienates the very users it needs to reach. Consumer adoption drives provider and payer engagement — not the other way around.</p>
+          <p class="case-body-text">A parallel strategic imperative: go direct to consumers before engaging physicians and payers. Building for payers first creates the risk of producing an over-medicalized product that alienates the very users it needs to reach. Consumer adoption drives provider and payer engagement, not the other way around.</p>
         </div>
         <div class="quote-box" style="margin: 0;">
           <p>"Lauren gets it done. And she doesn't skimp on quality. In working on the diabetes market, Lauren pushed until she made it work after a week of searching. She set up a time with another teammate to ask for help, created Excel models, and cracked it. It was a tour-de-initiative and acuity that I could never have done."</p>
@@ -336,10 +329,16 @@
       </div>
     </div>
 
-    <!-- Market chart — inset -->
-    <div class="case-img-inset-wrap">
-      <img src="diabetes-market-chart.png" alt="U.S. diabetes prevalence and projected growth chart showing expanded addressable market" />
-      <p class="case-img-caption-editorial">The expanded addressable market: from insulin-treated diabetes to the full metabolic health segment.</p>
+    <!-- Market chart + D2C diagram side by side -->
+    <div class="case-img-pair">
+      <div class="case-img-pair-item">
+        <img src="diabetes-market-chart.png" alt="U.S. diabetes prevalence and projected growth chart showing expanded addressable market" />
+        <p class="case-img-caption-editorial">The expanded addressable market: from insulin-treated diabetes to the full metabolic health segment.</p>
+      </div>
+      <div class="case-img-pair-item">
+        <img src="diabetes-d2c-diagram.png" alt="Diagram showing direct-to-consumer strategy, bypassing payers and providers to reach PWDs first" />
+        <p class="case-img-caption-editorial">The go-to-market imperative: reach consumers first, attract payers and providers through demonstrated engagement.</p>
+      </div>
     </div>
 
     <!-- CONCEPT -->
@@ -349,17 +348,19 @@
 
       <p class="case-body-text">The resulting concept — a metabolic wellness app called In Touch — was built around four core features. Track lets users monitor the health metrics that matter most to them. Insights reveals connections between their behaviors and how they feel. Explore surfaces tips and reflections from a matched community of people with similar physiological profiles. Try lets users pick habits to experiment with over a defined period.</p>
 
-      <p class="case-body-text">Five design attributes guided every decision: Simple, Empowering, Joyful, Safe, and Fulfilling. The framing was deliberate — none of the attributes reference diabetes. The product was designed to feel like a wellness tool first, not a disease management tool.</p>
+      <p class="case-body-text">Five design attributes guided every decision: Simple, Empowering, Joyful, Safe, and Fulfilling. The framing was deliberate. None of the attributes reference diabetes. The product was designed to feel like a wellness tool first, not a disease management tool.</p>
     </div>
 
-    <!-- Four screens — full width -->
-    <img src="diabetes-four-screens.png" alt="Four app screens showing Track, Insights, Explore, and Try features" class="case-img-full" />
-    <p class="case-img-caption-editorial">The four core features of the metabolic wellness app concept, prototyped for usability testing.</p>
-
-    <!-- Design attributes — inset -->
-    <div class="case-img-inset-wrap">
-      <img src="diabetes-design-attributes.png" alt="Five design attributes: Simple, Empowering, Joyful, Safe, Fulfilling" />
-      <p class="case-img-caption-editorial">Five design attributes, none of which reference diabetes — an intentional strategic choice.</p>
+    <!-- Four screens + design attributes side by side -->
+    <div class="case-img-pair">
+      <div class="case-img-pair-item">
+        <img src="diabetes-four-screens.png" alt="Four app screens showing Track, Insights, Explore, and Try features" />
+        <p class="case-img-caption-editorial">Four core features prototyped for usability testing.</p>
+      </div>
+      <div class="case-img-pair-item">
+        <img src="diabetes-design-attributes.png" alt="Five design attributes: Simple, Empowering, Joyful, Safe, Fulfilling" />
+        <p class="case-img-caption-editorial">Five design attributes guiding the full product experience.</p>
+      </div>
     </div>
 
     <!-- OUTCOMES -->
@@ -372,10 +373,6 @@
         <div class="outcome-card">
           <div class="stat-value">6M → ~300M</div>
           <div class="stat-label">Addressable market expansion through metabolic health reframe</div>
-        </div>
-        <div class="outcome-card">
-          <div class="stat-value">69%</div>
-          <div class="stat-label">Of PWD app usage is wellness apps — the market signal that anchored the pivot</div>
         </div>
         <div class="outcome-card">
           <div class="stat-value">4 features</div>
@@ -392,7 +389,7 @@
     <div class="case-section">
       <div class="case-section-label">What I learned</div>
       <h3>On the value of blinding the research topic</h3>
-      <p class="case-body-text">Deciding to conduct the study as a general health and wellness study rather than a diabetes study was the most valuable methodological choice on this project — and one I now build into any research involving stigmatized conditions. Social desirability bias is particularly acute when the study topic carries shame; disclosing the focus upfront shapes every response before a single question is asked. The blinded design removed that distortion and surfaced the avoidance behavior that became the cornerstone of the entire strategy. The insight was not hiding — it just needed a research design that wouldn't scare it off.</p>
+      <p class="case-body-text">How you frame a study shapes what you find. Running this as a general health and wellness study rather than a diabetes study removed the social desirability bias that would have colored every response. The avoidance behavior that became the cornerstone of our strategy only surfaced because participants weren't primed to perform wellness around diabetes. I now treat research framing and screener design as strategic decisions in their own right — particularly on topics where identity and stigma are in play.</p>
     </div>
 
   </div>
