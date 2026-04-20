@@ -15,209 +15,209 @@
   </script>
 
   <style>
-    /* ── Meta table ──────────────────────────────────────────── */
-    .meta-table {
-      display: grid;
-      grid-template-columns: 140px 1fr;
-      gap: 0;
-      border-top: 1px solid var(--warm-line);
-      border-bottom: 1px solid var(--warm-line);
-      margin: 2.5rem 0 3rem;
-      font-family: var(--sans, 'DM Sans', sans-serif);
+    .case-hero { border-bottom: none; }
+
+    .case-body-text {
+      font-size: 1rem;
+      color: var(--ink-light);
+      line-height: 1.85;
+      max-width: 680px;
+      margin-bottom: 1.25rem;
     }
-    .meta-table dt,
-    .meta-table dd {
-      padding: 0.75rem 0;
-      margin: 0;
-      font-size: 0.82rem;
-      border-bottom: 1px solid var(--warm-line);
-      line-height: 1.5;
+    .case-body-text:last-child { margin-bottom: 0; }
+
+    .case-body-list {
+      max-width: 680px;
+      margin: 0 0 1.25rem 0;
+      padding-left: 1.4rem;
+      color: var(--ink-light);
+      font-size: 1rem;
+      line-height: 1.85;
     }
-    .meta-table dt:last-of-type,
-    .meta-table dd:last-of-type {
-      border-bottom: none;
-    }
-    .meta-table dt {
-      color: var(--ink-muted);
-      letter-spacing: 0.06em;
-      text-transform: uppercase;
-      font-size: 0.72rem;
-      font-weight: 500;
-      padding-right: 1rem;
-    }
-    .meta-table dd {
-      color: var(--ink);
+    .case-body-list li {
+      margin-bottom: 0.4rem;
     }
 
-    /* ── Context: text + image float ────────────────────────── */
+    /* Context: image beside text */
     .context-layout {
-      display: flex;
-      gap: 2.5rem;
-      align-items: flex-start;
-    }
-    .context-text {
-      flex: 1 1 0;
-      min-width: 0;
-    }
-    .context-image {
-      flex: 0 0 38%;
-      max-width: 38%;
-    }
-    .context-image img {
-      width: 100%;
-      border-radius: var(--radius, 4px);
-      display: block;
-    }
-    .context-image figcaption {
-      font-size: 0.72rem;
-      font-style: italic;
-      color: var(--ink-muted);
-      margin-top: 0.5rem;
-      line-height: 1.4;
-    }
-
-    /* ── Full-width image ───────────────────────────────────── */
-    .img-full {
-      width: 100%;
-      display: block;
-      border-radius: var(--radius, 4px);
-    }
-    .img-full-wrap {
-      margin: 2rem 0;
-    }
-    .img-full-wrap figcaption {
-      font-size: 0.72rem;
-      font-style: italic;
-      color: var(--ink-muted);
-      margin-top: 0.55rem;
-      line-height: 1.4;
-    }
-
-    /* ── Inset image (40–55% centered) ─────────────────────── */
-    .img-inset {
-      display: block;
-      margin: 2rem auto;
-      width: 50%;
-    }
-    .img-inset-wrap {
-      text-align: center;
-      margin: 2rem 0;
-    }
-    .img-inset-wrap img {
-      display: block;
-      margin: 0 auto;
-      width: 50%;
-      border-radius: var(--radius, 4px);
-    }
-    .img-inset-wrap figcaption {
-      display: block;
-      width: 50%;
-      margin: 0.55rem auto 0;
-      font-size: 0.72rem;
-      font-style: italic;
-      color: var(--ink-muted);
-      text-align: left;
-      line-height: 1.4;
-    }
-
-    /* ── Process: text left, quote right ────────────────────── */
-    .process-layout {
       display: grid;
-      grid-template-columns: 1fr 320px;
+      grid-template-columns: 1fr 340px;
       gap: 3rem;
       align-items: start;
+      margin-top: 1.5rem;
     }
-    .stakeholder-quote {
-      background: var(--cream, #faf8f4);
-      border-left: 3px solid var(--teal, #4a9b8e);
-      padding: 1.5rem 1.5rem 1.25rem;
-      border-radius: 0 var(--radius, 4px) var(--radius, 4px) 0;
+    .context-img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      object-fit: cover;
     }
-    .stakeholder-quote blockquote {
-      margin: 0 0 0.75rem;
-      font-family: var(--serif, 'Cormorant Garamond', serif);
-      font-size: 1.15rem;
-      font-style: italic;
-      color: var(--ink);
-      line-height: 1.55;
-    }
-    .stakeholder-quote cite {
-      font-size: 0.78rem;
+    .context-img-caption {
+      font-size: 0.72rem;
       color: var(--ink-muted);
-      font-style: normal;
-      letter-spacing: 0.03em;
+      font-style: italic;
+      margin-top: 0.5rem;
+      line-height: 1.5;
     }
 
-    /* ── Research comparison table ──────────────────────────── */
-    .research-table {
+    /* Full-width photo */
+    .case-img-full {
+      display: block;
       width: 100%;
-      border-collapse: collapse;
-      margin: 1.75rem 0;
-      font-size: 0.88rem;
+      margin: 2.5rem 0 0.75rem;
+      border-radius: var(--radius);
+      object-fit: cover;
+      max-height: 480px;
     }
-    .research-table th {
+
+    .case-img-caption-editorial {
       text-align: left;
       font-size: 0.72rem;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
       color: var(--ink-muted);
-      font-weight: 500;
-      padding: 0.6rem 1rem 0.6rem 0;
-      border-bottom: 1px solid var(--warm-line);
-    }
-    .research-table td {
-      padding: 0.7rem 1rem 0.7rem 0;
-      border-bottom: 1px solid var(--warm-line);
-      color: var(--ink);
-      vertical-align: top;
-      line-height: 1.5;
-    }
-    .research-table td:first-child {
-      color: var(--teal, #4a9b8e);
-      font-weight: 500;
+      font-style: italic;
+      margin-bottom: 2.5rem;
     }
 
-    /* ── Participant bullets (Research) ─────────────────────── */
-    .participant-list {
-      list-style: none;
-      margin: 1.25rem 0;
-      padding: 0;
+    /* Inset image wrapper ~42% */
+    .case-img-inset-wrap {
+      width: 42%;
+      margin: 2.5rem auto 2.5rem;
     }
-    .participant-list li {
-      padding: 0.35rem 0 0.35rem 1.1rem;
-      position: relative;
-      font-size: 0.88rem;
+    .case-img-inset-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+    }
+    .case-img-inset-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    /* Wider inset image wrapper ~55% */
+    .case-img-training-wrap {
+      width: 55%;
+      margin: 2rem auto 2.5rem;
+    }
+    .case-img-training-wrap img {
+      display: block;
+      width: 100%;
+      border-radius: var(--radius);
+      opacity: 0.92;
+    }
+    .case-img-training-wrap .case-img-caption-editorial { margin-bottom: 0; }
+
+    /* Process: text left, quote box right */
+    .process-layout {
+      display: grid;
+      grid-template-columns: 1fr 300px;
+      gap: 3rem;
+      align-items: start;
+      margin-top: 1.5rem;
+    }
+
+    /* Inline quote box */
+    .quote-box {
+      background: var(--white);
+      border: 1px solid var(--warm-line);
+      border-left: 3px solid var(--teal);
+      padding: 1.5rem 2rem;
+      border-radius: 0 var(--radius) var(--radius) 0;
+      margin: 2rem 0;
+      max-width: 680px;
+    }
+    .quote-box p {
+      font-family: var(--serif);
+      font-size: 1.1rem;
+      font-style: italic;
       color: var(--ink);
-      border-bottom: 1px solid var(--warm-line);
-      line-height: 1.5;
+      line-height: 1.6;
+      margin: 0 0 0.6rem;
     }
-    .participant-list li::before {
-      content: "—";
-      position: absolute;
-      left: 0;
+    .quote-box-attr {
+      font-size: 0.78rem;
       color: var(--ink-muted);
+      font-style: italic;
+    }
+
+    /* Pull quote */
+    .pull-quote {
+      margin: 3.5rem 0;
+    }
+    .pull-quote-text {
+      font-family: var(--serif);
+      font-size: clamp(1.35rem, 2.2vw, 1.85rem);
+      font-weight: 300;
+      line-height: 1.5;
+      color: var(--ink);
+      max-width: 800px;
+      margin-bottom: 1rem;
+    }
+    .pull-quote-attr {
       font-size: 0.82rem;
-    }
-    .participant-list li:first-child {
-      border-top: 1px solid var(--warm-line);
+      color: var(--ink-muted);
+      font-style: italic;
     }
 
-    /* ── Responsive ─────────────────────────────────────────── */
-    @media (max-width: 780px) {
-      .context-layout {
-        flex-direction: column;
-      }
-      .context-image {
-        flex: unset;
-        max-width: 100%;
-      }
-      .process-layout {
-        grid-template-columns: 1fr;
-      }
-      .img-inset-wrap img,
-      .img-inset-wrap figcaption {
-        width: 90%;
-      }
+    /* Meta table */
+    .case-meta-table {
+      display: grid;
+      grid-template-columns: 1fr 1fr 2fr;
+      gap: 2rem;
+      padding: 2.5rem 0;
+      border-top: 1px solid var(--warm-line);
+      border-bottom: 1px solid var(--warm-line);
+      margin-bottom: 4.5rem;
+    }
+    .case-meta-label {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 0.6rem;
+    }
+    .case-meta-value {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+    }
+
+    /* Findings table */
+    .mindsets-table {
+      width: 100%;
+      max-width: 680px;
+      border-collapse: collapse;
+      margin: 2rem 0 2.5rem;
+    }
+    .mindsets-table th {
+      font-size: 0.72rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      padding: 0 1.5rem 0.75rem 0;
+      text-align: left;
+      border-bottom: 1px solid var(--warm-line);
+    }
+    .mindsets-table td {
+      font-size: 0.95rem;
+      color: var(--ink-light);
+      line-height: 1.65;
+      padding: 0.75rem 1.5rem 0.75rem 0;
+      border-bottom: 1px solid var(--warm-line);
+      vertical-align: top;
+    }
+    .mindsets-table td em {
+      color: var(--ink);
+      font-style: normal;
+      font-weight: 500;
+    }
+
+    @media (max-width: 900px) {
+      .process-layout { grid-template-columns: 1fr; }
+      .case-img-inset-wrap,
+      .case-img-training-wrap { width: 100%; }
+    }
+    @media (max-width: 768px) {
+      .case-meta-table { grid-template-columns: 1fr; }
+      .context-layout { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -230,7 +230,7 @@
     </div>
   </nav>
 
-  <!-- ── HERO ──────────────────────────────────────────────── -->
+  <!-- HERO -->
   <div class="case-hero">
     <a href="index.html" class="case-hero-back">← All work</a>
 
@@ -242,7 +242,7 @@
 
     <h1 class="case-hero-title">How might we win with small businesses?</h1>
 
-    <p class="case-hero-summary">A major airline wanted to better engage small business customers, a largely underserved segment caught between individual frequent flyer programs and enterprise corporate accounts. Through deep ethnographic research with 20 CEOs and CFOs, I uncovered a structural insight about how small businesses make decisions that reframed the entire opportunity, leading to a new invite-only loyalty program concept with a $337M five-year revenue projection.</p>
+    <p class="case-hero-summary">A major airline wanted to better engage small business customers, a segment caught between individual frequent flyer programs and large corporate accounts. I led the end-to-end project: from secondary research and ethnographic fieldwork to a one-day stakeholder work session, a loyalty program concept, and a five-year financial model.</p>
 
     <div class="case-hero-stats">
       <div class="stat-item">
@@ -260,174 +260,133 @@
     </div>
   </div>
 
-  <!-- ── CONTENT ────────────────────────────────────────────── -->
   <div class="case-content">
 
-    <!-- Meta table -->
-    <dl class="meta-table">
-      <dt>Role</dt>
-      <dd>Project Lead</dd>
-      <dt>Industry</dt>
-      <dd>Aviation · B2B Loyalty</dd>
-      <dt>Methods</dt>
-      <dd>Secondary market sizing · Ethnographic interviews · Stakeholder immersion session · Video-based synthesis · Concept prototyping · Financial modeling</dd>
-    </dl>
-
-    <!-- ── CONTEXT ──────────────────────────────────────────── -->
-    <div class="case-section">
-      <div class="case-section-label">Context</div>
-      <h3>A segment that fell through the cracks</h3>
-
-      <div class="context-layout">
-        <div class="context-text">
-          <p>Small businesses represent a significant share of business travel, yet airline loyalty programs had been designed for two audiences: individual frequent flyers and large corporations with managed travel policies. The small business owner, traveling regularly but without a procurement team or a negotiated corporate rate, had no purpose-built home.</p>
-          <p>The airline had a hypothesis that a dedicated SMB offering could unlock meaningful revenue. As Project Lead, I was asked to scope and run the full research and concept process: from secondary market sizing to ethnographic fieldwork in business owners' offices, through an immersive stakeholder synthesis session, and into a concept deliverable that included a P&amp;L, member journey, product roadmap, and five-year growth trajectory.</p>
-          <p>The project was a collaboration with a strategy and innovation firm. I led research design, recruitment, field execution, synthesis facilitation, and concept development.</p>
-        </div>
-        <figure class="context-image">
-          <img src="smb-insights-session.png" alt="Insights session room showing participant boards and insight panels" />
-          <figcaption>Insights session room with participant profiles and research findings panels.</figcaption>
-        </figure>
+    <!-- META ROW -->
+    <div class="case-meta-table">
+      <div>
+        <div class="case-meta-label">Role</div>
+        <div class="case-meta-value">Project Lead</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Industry</div>
+        <div class="case-meta-value">Aviation · B2B Loyalty</div>
+      </div>
+      <div>
+        <div class="case-meta-label">Methods</div>
+        <div class="case-meta-value">Secondary research · Ethnographic interviews · Video-based insights session · Concept prototyping · Financial modeling</div>
       </div>
     </div>
 
-    <!-- ── RESEARCH ─────────────────────────────────────────── -->
+    <!-- CONTEXT -->
+    <div class="case-section">
+      <div class="case-section-label">Context</div>
+      <h3>A segment caught between two programs</h3>
+
+      <div class="context-layout">
+        <div>
+          <p class="case-body-text">Most airline loyalty programs were designed for two audiences: individual frequent flyers and large corporations with managed travel accounts. Small businesses, traveling regularly but without a procurement team or negotiated corporate rate, had no purpose-built offering.</p>
+          <p class="case-body-text">The airline had a hypothesis that a dedicated small business program could unlock meaningful revenue. As Project Lead, I scoped and ran the full process: secondary market sizing, ethnographic fieldwork with CEOs and CFOs at their offices, a one-day video-based stakeholder work session, and a concept deliverable that included a member journey, product roadmap, P&amp;L, and five-year growth trajectory.</p>
+        </div>
+        <div>
+          <img src="smb-insights-session.png" alt="Insights session room with participant boards and research panels" class="context-img" />
+          <p class="context-img-caption">Insights session room with participant profiles and research findings panels.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- RESEARCH -->
     <div class="case-section">
       <div class="case-section-label">Research</div>
-      <h3>The practices insight: small businesses are structurally different</h3>
+      <h3>Small businesses abide by practices</h3>
 
-      <p>The research centered on 3-hour in-office ethnographic interviews, conducted at each business's own location. Seeing people in their actual environment, surrounded by their team, their tools, and the rhythms of their workday, produced a quality of insight that a conference room or video call cannot replicate.</p>
+      <p class="case-body-text">I recruited CEOs and CFOs from 10 small businesses and conducted 3-hour in-context ethnographic interviews at each company's office. Seeing people in their actual environment, surrounded by their team and the rhythms of their workday, produced a quality of insight that a conference room cannot replicate.</p>
 
-      <p>Twenty participants across 10 businesses, recruited to represent diversity in industry, geography, size, and travel frequency:</p>
+      <p class="case-body-text">The central finding was a structural distinction about how small businesses govern behavior. Large companies are governed by explicit policies. Individuals are governed by personal preferences. Small businesses operate by something in between: <em>practices</em>, informal customs grown by culture, flexible but ambiguous, and enforced by social norms rather than rules.</p>
 
-      <ul class="participant-list">
-        <li>10 businesses spanning professional services, manufacturing, consulting, and tech</li>
-        <li>CEOs and CFOs interviewed in pairs to surface organizational dynamics alongside individual perspectives</li>
-        <li>Travel frequency ranging from 4 to 30+ trips per year</li>
-      </ul>
-
-      <p>The central finding from narrative analysis was a structural distinction about how small businesses govern behavior. They do not operate by explicit policy (like large corporations) or by pure personal preference (like individual travelers). They operate by <em>practices</em>: informal customs that are grown by culture, flexible but ambiguous, and enforced by social norms rather than rules. Where a corporate traveler says "I have to," an SMB owner says "I should."</p>
-
-      <div class="insight-block">
-        <p>The practices frame reoriented the entire design problem. A successful program could not be built on the assumption of rational policy compliance or individual loyalty incentives alone. It had to work with the peer-trust dynamics and informal norms that actually drive SMB decision-making.</p>
+      <div class="case-img-inset-wrap">
+        <img src="smb-policies-practices-preferences.png" alt="Policies, Practices, and Preferences framework" />
+        <p class="case-img-caption-editorial">The Policies / Practices / Preferences framework, the core reframe from the research.</p>
       </div>
 
-      <div class="img-inset-wrap">
-        <figure>
-          <img src="smb-policies-practices-preferences.png" alt="Policies, Practices, and Preferences framework diagram" />
-          <figcaption>The Policies / Practices / Preferences framework, the core reframe from the research.</figcaption>
-        </figure>
-      </div>
+      <p class="case-body-text">This reframe changed the design problem. A corporate traveler says "I have to." An SMB owner says "I should." A successful program had to work with the peer-trust dynamics and informal norms that actually drive small business decision-making, not against them.</p>
 
-      <p>The research also mapped the SMB travel journey across planning, booking, in-transit, and post-trip phases, surfacing the specific moments where small business owners felt most underserved and most open to a differentiated offering.</p>
-
-      <div class="img-inset-wrap">
-        <figure>
-          <img src="smb-opportunity-matrix.png" alt="SMB travel opportunity space matrix plotting travel moments by frequency and emotional weight" />
-          <figcaption>Opportunity space matrix mapping travel moments by frequency and emotional stakes.</figcaption>
-        </figure>
-      </div>
-
-      <table class="research-table">
+      <table class="mindsets-table">
         <thead>
           <tr>
-            <th>What we thought going in</th>
-            <th>What the research showed</th>
+            <th>Small businesses are governed by…</th>
+            <th>Which means…</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td>SMBs want total freedom</td>
-            <td>SMBs want to know what "reasonable" looks like so they can feel confident in their choices</td>
+            <td><em>Practices,</em> not policies</td>
+            <td>Implicit norms, not explicit rules</td>
           </tr>
           <tr>
-            <td>SMBs make purely business-driven decisions</td>
-            <td>Business decisions are often rationalized personal decisions, which creates guilt</td>
+            <td><em>Peer guidance,</em> not top-down mandates</td>
+            <td>Trust networks matter more than program marketing</td>
           </tr>
           <tr>
-            <td>Lack of policy is a pain point</td>
-            <td>SMBs don't want policies; they manage travel through norms and peer guidance</td>
+            <td><em>Community belonging,</em> not just individual rewards</td>
+            <td>A program needs to feel like an in-group, not a points scheme</td>
           </tr>
           <tr>
-            <td>Loyalty programs need to reward the individual</td>
-            <td>Community engagement and belonging are equally important loyalty drivers</td>
+            <td><em>"I should,"</em> not "I have to" or "I want to"</td>
+            <td>Decisions carry social weight and mild guilt when broken</td>
           </tr>
         </tbody>
       </table>
     </div>
 
-    <!-- ── PROCESS ──────────────────────────────────────────── -->
+    <!-- WORKSHOP -->
     <div class="case-section">
-      <div class="case-section-label">Process</div>
-      <h3>Immersing stakeholders in the research before designing anything</h3>
+      <div class="case-section-label">Workshop</div>
+      <h3>Immersing stakeholders before designing anything</h3>
 
       <div class="process-layout">
-        <div class="process-text">
-          <p>One of the most consequential design decisions on this project was how we structured the transition from research to ideation. Rather than presenting findings in a deck and moving to a whiteboard session, we ran a full-day video-based insights immersion with stakeholders from IT, Sales, Product, and Marketing.</p>
-
-          <p>I curated video clips from the ethnographic interviews, organized around the key tensions and reframes from the research. Stakeholders watched business owners talk about their peer networks, their ambivalence about policy, their pride in staying small. Then they ideated from that shared context, not from a summary slide.</p>
-
-          <p>The quality of ideas was measurably different. Concepts generated after direct exposure to participant voices were grounded in real customer tensions rather than internal assumptions. The afternoon ideation session produced over 20 distinct concepts, evaluated across desirability, viability, and feasibility before converging on a direction.</p>
+        <div>
+          <p class="case-body-text">Rather than presenting findings in a deck and moving to a whiteboard, I ran a one-day video-based insights work session with stakeholders from IT, Sales, Product, and Marketing. I curated clips from the ethnographic interviews so stakeholders could hear business owners talk about peer networks, travel decisions, and their relationship with policy in their own words.</p>
+          <p class="case-body-text">Stakeholders then ideated from that shared context rather than from a summary slide. The session produced a range of concepts, each evaluated across desirability, viability, and feasibility before converging on a direction.</p>
         </div>
-
-        <div class="stakeholder-quote">
-          <blockquote>"SMBs don't have or want policy. They manage with norms. Big companies are adopting practices too, just like SMBs."</blockquote>
-          <cite>Stakeholder insight captured during the immersion session</cite>
+        <div class="quote-box" style="margin: 0;">
+          <p>"SMBs don't have or want policy. They manage with norms. Big companies are adopting practices too, just like SMBs."</p>
+          <span class="quote-box-attr">— Stakeholder, captured during the work session</span>
         </div>
-      </div>
-
-      <figure class="img-full-wrap">
-        <img class="img-full" src="smb-workshop-wall.png" alt="Workshop room with synthesis wall showing We Thought and We Learned panels alongside journey map sticky notes" />
-        <figcaption>The immersion session room: journey map synthesis wall alongside live insight capture from stakeholder discussion.</figcaption>
-      </figure>
-
-      <div class="img-inset-wrap" style="margin-top:2rem;">
-        <figure>
-          <img src="smb-concept-worksheets.png" alt="Concept worksheets from the ideation session showing six distinct concept directions" />
-          <figcaption>Six concept directions developed during the ideation session, each evaluated against desirability, viability, and feasibility.</figcaption>
-        </figure>
       </div>
     </div>
 
-    <!-- ── DESIGN ───────────────────────────────────────────── -->
+    <!-- WORKSHOP PHOTO — full width -->
+    <img src="smb-workshop-wall.png" alt="Workshop synthesis wall showing We Thought and We Learned panels" class="case-img-full" />
+    <p class="case-img-caption-editorial">The work session room: synthesis wall capturing assumptions tested against what the research actually showed.</p>
+
+    <!-- CONCEPT -->
     <div class="case-section">
-      <div class="case-section-label">Design</div>
-      <h3>An invite-only program built on peer trust, not points mechanics</h3>
+      <div class="case-section-label">Concept</div>
+      <h3>An invite-only program built on peer trust</h3>
 
-      <p>The concept that emerged from ideation was shaped directly by the practices insight. A standard points program would have replicated the individual-flyer model; a managed corporate account would have imposed the policy model. Neither fit SMBs.</p>
+      <p class="case-body-text">The concept that emerged was shaped directly by the practices insight. A standard points program would replicate the individual-flyer model. A managed corporate account would impose the policy model. Neither fit how small businesses actually operate.</p>
 
-      <p>The program concept operates on peer referral: members invite peers from their professional network, not the airline. Joining through a trusted contact changes the relationship from transactional to communal. Package benefits flex by business type, recognizing that a manufacturing company traveling for site visits has different needs than a consulting firm traveling for client pitches. And benefits extend beyond flights to reduce business friction, serving the business, not just the traveler.</p>
+      <p class="case-body-text">The program is invite-only: members refer peers from their professional network, not the airline. Joining through a trusted contact changes the relationship from transactional to communal. Individual travelers choose packages that flex around their business needs, and benefits extend beyond flights to reduce broader business friction.</p>
 
-      <div class="img-inset-wrap">
-        <figure>
-          <img src="smb-member-journey.png" alt="Member Journey storyboard showing six stages from invitation through peer referral" />
-          <figcaption>Member journey: from peer invitation through sign-up, package selection, and referral reward.</figcaption>
-        </figure>
+      <div class="case-img-inset-wrap">
+        <img src="smb-member-journey.png" alt="Member journey from peer invitation through sign-up, package selection, and referral" />
+        <p class="case-img-caption-editorial">Member journey: from peer invitation through sign-up, package selection, and referral reward.</p>
       </div>
 
-      <p>The concept deliverable included a full member journey, a three-horizon product roadmap across packages, benefits, messaging, and pricing, and a financial model projecting growth from a single pilot market to national scale.</p>
+      <p class="case-body-text">The concept deliverable included a member journey, a three-horizon product roadmap across packages, benefits, messaging, and pricing, and a financial model projecting growth from a single pilot market to national scale.</p>
 
-      <div class="img-inset-wrap">
-        <figure>
-          <img src="smb-product-roadmap.png" alt="Product roadmap organized across Now, Next, and Later horizons covering packages, benefits, messaging, and pricing" />
-          <figcaption>Product roadmap across Now / Next / Later, covering packages, benefits, messaging, and pricing tracks.</figcaption>
-        </figure>
-      </div>
-
-      <p>The model pilots in a single hub city with SMBs of 50 to 200 employees and a minimum air spend threshold. Invite selectivity (five invites per member, 15 to 30 percent acceptance rate) drives perceived scarcity and community trust. As practices form around the program, market share of SMB air spend is projected to increase from 25 percent to 35 percent by year five.</p>
-
-      <div class="img-inset-wrap">
-        <figure>
-          <img src="smb-financial-projections.png" alt="Five-year financial projection chart showing revenue growth from $8M in Year 1 to $337M in Year 5" />
-          <figcaption>Five-year revenue projection, growing from $8M at launch to $337M by Year 5 across 14 markets.</figcaption>
-        </figure>
+      <div class="case-img-training-wrap">
+        <img src="smb-product-roadmap.png" alt="Product roadmap across Now, Next, and Later horizons" />
+        <p class="case-img-caption-editorial">Product roadmap across Now / Next / Later, covering packages, benefits, messaging, and pricing tracks.</p>
       </div>
     </div>
 
-    <!-- ── OUTCOMES ─────────────────────────────────────────── -->
+    <!-- OUTCOMES -->
     <div class="case-section">
       <div class="case-section-label">Outcomes</div>
-      <h3>A concept grounded in research and sized for the market</h3>
+      <h3>A concept sized for the market</h3>
+      <p class="case-body-text">The financial model projected growth from a single hub city pilot to 14 markets over five years, reaching 25,000 national members and 4,000 SMB partnerships.</p>
 
       <div class="outcome-grid">
         <div class="outcome-card">
@@ -449,17 +408,21 @@
       </div>
     </div>
 
-    <!-- ── WHAT I LEARNED ───────────────────────────────────── -->
+    <!-- WHAT I LEARNED -->
     <div class="case-section">
       <div class="case-section-label">What I learned</div>
-      <h3>On the design value of structured stakeholder immersion</h3>
+      <h3>On video-based immersion as a design tool</h3>
+      <p class="case-body-text">The video-based work session format is the most effective tool I have used for closing the gap between research and design. When stakeholders hear a business owner describe how they make decisions in their own words, they internalize the customer in a way a summary slide cannot produce. The output is not just better-informed ideas: it is a shared mental model across functions that reduces re-litigation of findings later in the process. I now build the clip selection and editing time explicitly into the project plan from the start. This project also reinforced the value of financial modeling as a design deliverable. Attaching a P&amp;L and growth trajectory to the concept changed the conversation with stakeholders from "interesting" to "how do we pilot this."</p>
+    </div>
 
-      <p>The video-based immersion format is the most effective tool I have used for closing the gap between research and design. When stakeholders hear a business owner describe how they make decisions in their own words, they internalize the customer in a way that a slide summary cannot produce. The output is not just better-informed ideas: it is a shared mental model across functions that reduces re-litigation of findings downstream. The format does require significant prep investment to select and sequence the right clips, and I now build that editing time explicitly into the project plan from the start rather than treating it as overhead after analysis. The other thing this project reinforced is the value of financial modeling as a design tool. Attaching a P&amp;L and growth trajectory to the concept elevated it from a promising idea to a fundable business case, which changed the conversation with stakeholders from "interesting" to "how do we pilot this."</p>
+    <!-- PULL QUOTE -->
+    <div class="pull-quote">
+      <p class="pull-quote-text">"Lauren is someone you always want on your team. She's enthusiastic, wicked smart, and incredibly intentional."</p>
+      <p class="pull-quote-attr">— Mike Smith, Jump Associates</p>
     </div>
 
   </div>
 
-  <!-- ── CASE NAV ───────────────────────────────────────────── -->
   <div class="case-nav">
     <div>
       <div class="case-nav-label">Next case study</div>
@@ -480,6 +443,13 @@
       <a href="mailto:ldrakepittock@gmail.com">ldrakepittock@gmail.com</a>
     </div>
   </footer>
+
+  <script>
+    const nav = document.querySelector('nav');
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 20);
+    });
+  </script>
 
 </body>
 </html>
